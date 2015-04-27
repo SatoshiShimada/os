@@ -1,0 +1,81 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+DEF_FDD_MSR_DIO	fdd.c	6;"	d	file:
+DEF_FDD_MSR_RQM	fdd.c	5;"	d	file:
+DEF_FDD_WRITE_COMMAND_RETRY	fdd.c	4;"	d	file:
+DEF_PORT_FDD_COMMAND	fdd.c	7;"	d	file:
+DEF_PORT_FDD_MSR	fdd.c	8;"	d	file:
+FDD_SECTORS_PER_TRACK	fdd2.c	5;"	d	file:
+FD_COMMAND_GAP3_SIZE_3_5inch	fdd2.c	6;"	d	file:
+FD_COMMAND_SECTOR_SIZE_512	fdd2.c	4;"	d	file:
+NULL	idt.c	6;"	d	file:
+PIC_IMR_MASK_IRQ0	pic.c	13;"	d	file:
+PIC_IMR_MASK_IRQ1	pic.c	14;"	d	file:
+PIC_IMR_MASK_IRQ2	pic.c	15;"	d	file:
+PIC_IMR_MASK_IRQ3	pic.c	16;"	d	file:
+PIC_IMR_MASK_IRQ4	pic.c	17;"	d	file:
+PIC_IMR_MASK_IRQ5	pic.c	18;"	d	file:
+PIC_IMR_MASK_IRQ6	pic.c	19;"	d	file:
+PIC_IMR_MASK_IRQ7	pic.c	20;"	d	file:
+PIC_IMR_MASK_IRQ_ALL	pic.c	21;"	d	file:
+PORT_PIC_MASTER_COMMAND	pic.c	3;"	d	file:
+PORT_PIC_MASTER_DATA	pic.c	5;"	d	file:
+PORT_PIC_MASTER_IMR	pic.c	6;"	d	file:
+PORT_PIC_MASTER_STATUS	pic.c	4;"	d	file:
+PORT_PIC_SLAVE_COMMAND	pic.c	8;"	d	file:
+PORT_PIC_SLAVE_DATA	pic.c	10;"	d	file:
+PORT_PIC_SLAVE_IMR	pic.c	11;"	d	file:
+PORT_PIC_SLAVE_STATUS	pic.c	9;"	d	file:
+ROOTDIR_MAX_FILE	fat12.c	5;"	d	file:
+cpu	test_processor.c	/^struct cpu_type cpu;$/;"	v	typeref:struct:cpu_type
+do_command	shell.c	/^int do_command(const char *command)$/;"	f
+execute_file	shell.c	/^int execute_file(void)$/;"	f
+fdc0_init	fdd2.c	/^int fdc0_init(void)$/;"	f
+fdd_command	fdd.c	/^int fdd_command(int command)$/;"	f
+fdd_command	fdd2.c	/^int fdd_command(unsigned char command)$/;"	f
+file	fat12.c	/^struct FAT12_FILE file[ROOTDIR_MAX_FILE];$/;"	v	typeref:struct:FAT12_FILE
+filecount	fat12.c	/^int filecount;$/;"	v
+get_memory_free_size	memory.c	/^unsigned int get_memory_free_size(void)$/;"	f
+get_rootdir_file	fat12.c	/^void get_rootdir_file(void)$/;"	f
+idt	idt.c	/^GATE_DESCRIPTOR idt[100];$/;"	v
+idtr	idt.c	/^IDTR idtr;$/;"	v
+init_idt	idt.c	/^int init_idt(void)$/;"	f
+init_pic	pic.c	/^int init_pic(void)$/;"	f
+init_screen	put_font.c	/^int init_screen(void)$/;"	f
+int_to_ascii	print.c	/^int int_to_ascii(char *str, unsigned int value)$/;"	f
+itoa	print.c	/^int itoa(char *str, unsigned int value)$/;"	f
+keycode	main.c	/^KEYCODE keycode;$/;"	v
+load_idt	idt.c	4;"	d	file:
+main	main.c	/^int main(void)$/;"	f
+mem	memory.c	/^MEMORY_CONTROL *mem = &memory_control;$/;"	v
+memcpy	print.c	/^void *memcpy(void *buf1, const void *buf2, unsigned int size)$/;"	f
+memory_alloc	memory.c	/^unsigned int memory_alloc(unsigned int size)$/;"	f
+memory_alloc_4k	memory.c	/^unsigned int memory_alloc_4k(unsigned int size)$/;"	f
+memory_control	memory.c	/^MEMORY_CONTROL memory_control;$/;"	v
+memory_control_init	memory.c	/^void memory_control_init(void)$/;"	f
+memory_free	memory.c	/^int memory_free(unsigned int addr, unsigned int size)$/;"	f
+memory_free_4k	memory.c	/^int memory_free_4k(unsigned int addr, unsigned int size)$/;"	f
+memory_test	memory_test.c	/^unsigned int memory_test(struct cpu_type cpu, unsigned int start, unsigned int end)$/;"	f
+memory_total	main.c	/^unsigned int memory_total;$/;"	v
+memset	print.c	/^void *memset(void *buf, int ch, unsigned int size)$/;"	f
+pos_x	put_font.c	/^static int pos_x, pos_y;$/;"	v	file:
+pos_y	put_font.c	/^static int pos_x, pos_y;$/;"	v	file:
+print_memory_free	shell.c	/^int print_memory_free(void)$/;"	f
+print_memory_size	shell.c	/^int print_memory_size(void)$/;"	f
+print_rootdir_file	shell.c	/^int print_rootdir_file(void)$/;"	f
+put_char	put_font.c	/^int put_char(char c, int color, int bgcolor, int x, int y)$/;"	f
+puts	put_font.c	/^int puts(char *str)$/;"	f
+puts_position	put_font.c	/^int puts_position(char *str, int x, int y)$/;"	f
+read_data_fdd	fdd2.c	/^int read_data_fdd(int drive, int head, int track, int sector)$/;"	f
+read_data_from_fdd	fdd.c	/^int read_data_from_fdd(int drive, int head, int track, int sector)$/;"	f
+read_fdc0_main_status_register	fdd2.c	/^read_fdc0_main_status_register(void)$/;"	f
+setupGateDescriptor	idt.c	/^void setupGateDescriptor(int num, int base,$/;"	f
+setupInterruptGate	idt.c	/^void setupInterruptGate(int num, void *interrupt_handler)$/;"	f
+strcat	print.c	/^char *strcat(char *dist, const char *src)$/;"	f
+strcmp	print.c	/^int strcmp(const char *str1, const char *str2)$/;"	f
+test_processor	test_processor.c	/^int test_processor(void)$/;"	f
+view_file_text	shell.c	/^int view_file_text(void)$/;"	f

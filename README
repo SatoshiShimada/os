@@ -1,0 +1,17 @@
+[os17]
+
+=os17 history=====================================
+develop history:
+os12:
+	FAT12 file read
+	command 'ls' and 'cat'
+os16:
+	FDD read command
+os17:
+	task switch config
+==================================================
+
+=memory map=======================================
+0x8200: sector2(stage2.bin file)
+0xc200: 0x4200 of FDD image (stage2.bin file)
+==================================================

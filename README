@@ -1,15 +1,7 @@
-[os17]
+My Operationg System.
+target: x86 IA32
 
-=os17 history=====================================
-develop history:
-os12:
-	FAT12 file read
-	command 'ls' and 'cat'
-os16:
-	FDD read command
-os17:
-	task switch config
-==================================================
+make
 
 =memory map=======================================
 0x8200: sector2(stage2.bin file)

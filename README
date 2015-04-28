@@ -3,6 +3,11 @@ target: x86 IA32
 
 make
 
+using emulator: qemu-system-x86
+using compiler: gcc, gas(AT & T syntax)
+
+FAT12 file system.
+
 =memory map=======================================
 0x8200: sector2(stage2.bin file)
 0xc200: 0x4200 of FDD image (stage2.bin file)

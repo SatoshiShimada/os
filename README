@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 My Operationg System
 
 target: x86 IntelArchitecture 32bit
@@ -15,18 +14,6 @@ or `make` and copy img.os file write to FloppyDisk.
 disk filesystem: FAT12
 master boot loader is jump to 0xC200, and execute program of sector 2.
 change to protected mode.
-
-=======
-My Operationg System.
-target: x86 IA32
-
-make
-
-using emulator: qemu-system-x86
-using compiler: gcc, gas(AT & T syntax)
-
-FAT12 file system.
->>>>>>> b79be46cf9cb03c2ce53012ef7fb0d7c8291aafd
 
 =memory map=======================================
 0x8200: sector2(stage2.bin file)

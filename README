@@ -1,15 +1,20 @@
-[os17]
+My Operationg System
 
-=os17 history=====================================
-develop history:
-os12:
-	FAT12 file read
-	command 'ls' and 'cat'
-os16:
-	FDD read command
-os17:
-	task switch config
-==================================================
+target: x86 IntelArchitecture 32bit
+
+using emulator: qemu(version 2.2.1)
+using compiler: gcc(version 4.9.2)
+platform: Linux
+
+
+execute:
+enter source directory, and `make run`
+or `make` and copy img.os file write to FloppyDisk.
+
+disk filesystem: FAT12
+master boot loader is jump to 0xC200, and execute program of sector 2.
+change to protected mode.
+
 
 =memory map=======================================
 0x8200: sector2(stage2.bin file)

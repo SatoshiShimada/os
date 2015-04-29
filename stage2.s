@@ -45,9 +45,7 @@ protected_segment:
 	mov		%ax, %gs
 	mov		%ax, %ss
 
-	#mov		$0xffffffff, %eax
 	mov		$0x81ff, %eax
-	#mov		$0x1000000, %eax
 	mov		%eax, %esp
 	mov		%eax, %ebp
 

@@ -130,7 +130,6 @@ print_fin:
 	ret
 
 end:
-	#jmp		0x8200
 	jmp		0xc200
 
 message_boot_success:
@@ -138,7 +137,3 @@ message_boot_success:
 message_boot_error:
 	.string	"read error\r\n"
 
-# bootsector enable signature
-#. = mbr_start + 510
-#.byte	0x55
-#.byte	0xaa

@@ -25,7 +25,6 @@ int main(void)
 	unsigned int *counter = (unsigned int *)0x1000000;
 	char keybuf;
 	char buf[100];
-	char console_buf[100];
 
 	init_idt();
 	init_pic();
@@ -35,9 +34,6 @@ int main(void)
 	set_keytable(KEY_EN1);
 	keycode.len = 0;
 	keycode.i_write = keycode.i_read = 0;
-
-	//fdc0_init();
-	//read_data_fdd(0, 0, 1, 1);
 
 	sti();
 	test_processor();
@@ -49,27 +45,22 @@ int main(void)
 
 	init_screen();
 
-	get_rootdir_file();
-
 	/* Welcome message & print information */
 	puts("Welcome to My OperatingSystem\n$ ");
-	memset(console_buf, 0, sizeof(console_buf));
 
 	for(;;) {
 		hlt();
 		itoa(buf, *counter / 100);
 		puts_position(buf, X_CHAR_COUNT - 3, 0);
 
+		keybuf = 0;
 		keybuf = get_keycode_ascii();
 		buf[0] = keybuf;
 		buf[1] = '\0';
-		puts(buf);
 		if(keybuf == '\n') {
-			do_command(console_buf);
-			memset(console_buf, 0, sizeof(console_buf));
-			puts("$ ");
-		} else {
-			strcat(console_buf, buf);
+			puts("\n$ ");
+		} else if(keybuf != 0) {
+			puts(buf);
 		}
 	}
 

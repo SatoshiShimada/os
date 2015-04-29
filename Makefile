@@ -49,5 +49,4 @@ stage2.bin: stage2.ls $(SRCFILE)
 	$(CC) $(CFLAGS) -m32 -c ./interrupt_handler/handler21.s -o handler21.o
 	$(CC) $(CFLAGS) -m32 -c ./interrupt_handler/handler26.s -o handler26.o
 	$(CC) $(CFLAGS) -m32 -c $(SRCFILE)
-	$(CC) $(CFLAGS) -m32 -c main.s -o main.o
 	ld -Tstage2.ls -melf_i386 -e after_MBR -o stage2.bin $(OBJFILE)

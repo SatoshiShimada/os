@@ -6,7 +6,7 @@ using emulator: qemu(version 2.2.1)
 using compiler: gcc(version 4.9.2)
 platform: Linux
 
-Using media: Flopy disk
+Using media: Floppy disk
 execute:
 enter source directory, and `make run`
 or `make` and copy img.os file write to FloppyDisk.

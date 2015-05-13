@@ -24,11 +24,10 @@ int do_command(const char *command)
 		execute_file();
 	} else if(!strcmp(command, "help")) {
 		puts("command:\n");
-		puts("memory, free, ls, cat, help, hello\n");
+		puts("memory, free, ls, cat, exe, help, hello\n");
 	} else if(!strcmp(command, "hello")) {
 		puts("Hello! MyOS world\n");
 	} else {
-
 		puts("Unknown command\n");
 	}
 

@@ -1,0 +1,5 @@
+Test file for check of FAT12 filesystem.
+2nd line.
+3rd line.
+
+1234 abcd ABCD !@#$

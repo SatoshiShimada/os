@@ -25,6 +25,7 @@ int main(void)
 	unsigned int *counter = (unsigned int *)0x1000000;
 	char keybuf;
 	char buf[100];
+	char cmd_buf[100];
 
 	init_idt();
 	init_pic();
@@ -48,6 +49,8 @@ int main(void)
 	/* Welcome message & print information */
 	puts("Welcome to My OperatingSystem\n$ ");
 
+	cmd_buf[0] = '\0';
+	
 	for(;;) {
 		hlt();
 		itoa(buf, *counter / 100);
@@ -58,9 +61,12 @@ int main(void)
 		buf[0] = keybuf;
 		buf[1] = '\0';
 		if(keybuf == '\n') {
+			do_command(cmd_buf);
 			puts("\n$ ");
+			cmd_buf[0] = '\0'; /* clear buf */
 		} else if(keybuf != 0) {
 			puts(buf);
+			strcpy(cmd_buf, buf);
 		}
 	}
 

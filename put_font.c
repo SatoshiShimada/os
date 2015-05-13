@@ -2,6 +2,7 @@
 
 
 static int pos_x, pos_y;
+static char is_initialize = 0;
 
 int put_char(char c, int color, int bgcolor, int x, int y)
 {
@@ -24,6 +25,10 @@ int puts_position(char *str, int x, int y)
 
 int puts(char *str)
 {
+	int tabstop = 4;
+	
+	if(is_initialize) init_screen();
+	
 	for(; *str != '\0'; str++) {
 		if(pos_x == X_CHAR_COUNT) {
 			pos_x = 0;
@@ -43,7 +48,10 @@ int puts(char *str)
 			pos_x = 0;
 			break;
 		case '\t':
-			pos_x += 4;
+			pos_x += tabstop - (pos_x % tabstop);
+			break;
+		case '\b':
+			put_char(' ', COLOR_WHITE, COLOR_BLACK, --pos_x, pos_y);
 			break;
 		default:
 			goto do_put_char;
@@ -73,5 +81,7 @@ int init_screen(void)
 			put_char(' ', COLOR_BLACK, COLOR_BLACK, x, y);
 		}
 	}
+	
+	is_initialize = 1;
 	return 0;
 }

@@ -1,7 +1,7 @@
 My Operationg System
 ====
 
-target: x86 IntelArchitecture 32bit
+Target: x86 IntelArchitecture 32bit
 
 ## Description
 

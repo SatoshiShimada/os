@@ -1,3 +1,4 @@
+/* Interger to Ascii */
 int itoa(char *str, unsigned int value)
 {
 	char buf[30];
@@ -19,6 +20,7 @@ int itoa(char *str, unsigned int value)
 	return 0;
 }
 
+/* Interger to Ascii */
 int int_to_ascii(char *str, unsigned int value)
 {
 	char buf[30];

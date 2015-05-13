@@ -6,19 +6,20 @@ Target: x86 IntelArchitecture 32bit
 ## 概要
 
 ### 使用　開発環境
- * エミュレータ: qemu(version 2.2.1)
 
- * コンパイラ: gcc(version 4.9.2)
+* エミュレータ: qemu(version 2.2.1)
 
- * 開発ホストOS: Linux
+* コンパイラ: gcc(version 4.9.2)
 
- * 想定しているストレージ: フロッピーディスク
+* 開発ホストOS: Linux
+
+* 想定しているストレージ: フロッピーディスク
 
 ### 使用方法
 
 ワーキングディレクトリをソースコードのあるディレクトリにする
 
-そして、makeとmake runでエミュレータが起動してOSを実行される
+そして、makeとmake runでエミュレータが起動してOSが実行される
 
 `make`
 
@@ -29,6 +30,8 @@ Target: x86 IntelArchitecture 32bit
 ddコマンドなどでフロッピーディスクに書き込む
 
 `make`
+
+Exsample)
 
 `dd if=./os.img of=/dev/sdx bs=512 count=2880 conv=sync,trunc`
 
@@ -47,10 +50,28 @@ ddコマンドなどでフロッピーディスクに書き込む
 
 0xc200: 0x4200 of FDD image (file: stage2.bin)
 
+## 実装済みの機能
+
+* Protected Modeへの移行
+
+* 割り込みの処理
+
+* キーボードからのキーコード取得
+
+* FAT12ファイルシステムからのファイル名取得
+
+* 搭載メモリ量の確認
+
 ## 実装予定
 
 * TaskSwtich
 
+* メモリー管理
+
 * FileSystem: FAT12
 
 * The text editor(like vi)
+
+## 既知のバグ
+
+* コマンドの途中でエミュレータが異常終了する

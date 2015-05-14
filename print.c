@@ -20,32 +20,6 @@ int itoa(char *str, unsigned int value)
 	return 0;
 }
 
-/* Interger to Ascii */
-int int_to_ascii(char *str, unsigned int value)
-{
-	char buf[30];
-	char *p = buf + 29;
-
-	*p = '\0';
-	p--;
-
-	for(;;) {
-		*p = (value % 10) + '0';
-		value = value / 10;
-		if(value == 0) break;
-		p--;
-	}
-
-	while(*p != '\0') {
-		*str = *p;
-		str++;
-		p++;
-	}
-	*str = '\0';
-
-	return 0;
-}
-
 char *strcat(char *dist, const char *src)
 {
 	int i;

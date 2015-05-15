@@ -31,7 +31,7 @@ ddコマンドなどでフロッピーディスクに書き込む
 
 `make`
 
-Exsample)
+Example)
 
 `dd if=./os.img of=/dev/sdx bs=512 count=2880 conv=sync,trunc`
 

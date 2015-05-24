@@ -39,7 +39,7 @@ int print_memory_size(void)
 	char buf[20];
 
 	puts("memory: ");
-	int_to_ascii(buf, memory_total / (1024 * 1024));
+	itoa(buf, memory_total / (1024 * 1024));
 	puts(buf);
 	puts("MB\n");
 
@@ -53,7 +53,7 @@ int print_memory_free(void)
 
 	puts("free: ");
 	free = get_memory_free_size();
-	int_to_ascii(buf, free / 1024);
+	itoa(buf, free / 1024);
 	strcat(buf, "KB\n");
 	puts(buf);
 
@@ -66,7 +66,7 @@ int print_rootdir_file(void)
 	int s;
 	char buf[20];
 
-	int_to_ascii(buf, filecount);
+	itoa(buf, filecount);
 	puts("file: ");
 	puts(buf);
 	puts("\n");
@@ -76,7 +76,7 @@ int print_rootdir_file(void)
 		memcpy(buf + 11, "\0", 1);
 		puts(buf);
 		s = (int)file[i].size;
-		int_to_ascii(buf, s);
+		itoa(buf, s);
 		puts(" size :");
 		puts(buf);
 		puts("\n");

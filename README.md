@@ -15,6 +15,9 @@ Target: x86 IntelArchitecture 32bit
 
 * 想定しているストレージ: フロッピーディスク
 
+* command `mformat` `mcopy`
+pacman -S mtools
+
 ### 使用方法
 
 ワーキングディレクトリをソースコードのあるディレクトリにする

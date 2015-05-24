@@ -66,7 +66,7 @@ int main(void)
 			cmd_buf[0] = '\0'; /* clear buf */
 		} else if(keybuf != 0) {
 			puts(buf);
-			strcpy(cmd_buf, buf);
+			strcat(cmd_buf, buf);
 		}
 	}
 

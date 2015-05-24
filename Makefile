@@ -28,7 +28,7 @@ $(IMG): mbr.bin stage2.bin
 	mformat -f 1440 -C -B mbr.bin -i $(IMG) ::
 	mcopy stage2.bin -i $(IMG) ::
 	mcopy mbr.ls -i $(IMG) ::
-	mcopy README -i $(IMG) ::
+	mcopy main.c -i $(IMG) ::
 	#mcopy fat.txt -i $(IMG) ::
 	mcopy exe/exe -i $(IMG) ::
 

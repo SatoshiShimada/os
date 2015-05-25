@@ -23,6 +23,7 @@ int main(void)
 {
 	extern struct cpu_type cpu;
 	unsigned int *counter = (unsigned int *)0x1000000;
+	int i;
 	char buf[100];
 	char cmd_buf[100];
 
@@ -66,7 +67,12 @@ int main(void)
 
 		} else if(buf[0] != 0) {
 			puts(buf);
-			strcat(cmd_buf, buf);
+			if(buf[0] == '\b') {
+				for(i = 0; cmd_buf[i] != 0; i++) ;
+				cmd_buf[i - 1] = 0;
+			} else {
+				strcat(cmd_buf, buf);
+			}
 		}
 	}
 

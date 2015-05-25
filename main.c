@@ -56,15 +56,16 @@ int main(void)
 		itoa(buf, *counter / 100);
 		puts_position(buf, X_CHAR_COUNT - 3, 0);
 
-		keybuf = 0;
-		keybuf = get_keycode_ascii();
-		buf[0] = keybuf;
+		buf[0] = get_keycode_ascii();
 		buf[1] = '\0';
-		if(keybuf == '\n') {
+		if(buf[0] == '\n') {
+			puts("\n ");
 			do_command(cmd_buf);
-			puts("\n$ ");
+			puts("$ ");
 			cmd_buf[0] = '\0'; /* clear buf */
-		} else if(keybuf != 0) {
+		} else if(buf[0] == '\t') {
+
+		} else if(buf[0] != 0) {
 			puts(buf);
 			strcat(cmd_buf, buf);
 		}

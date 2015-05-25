@@ -9,6 +9,7 @@ extern int filecount;
 extern struct FAT12_FILE file[];
 
 int execute_file(void);
+//int print_startup_time(void);
 
 int do_command(const char *command)
 {
@@ -22,6 +23,8 @@ int do_command(const char *command)
 		view_file_text();
 	} else if(!strcmp(command, "exe")) {
 		execute_file();
+	} else if(!strcmp(command, "time")) {
+		//print_startup_time();
 	} else if(!strcmp(command, "help")) {
 		puts("command:\n");
 		puts("memory, free, ls, cat, exe, help, hello\n");
@@ -119,3 +122,15 @@ int view_file_text(void)
 
 	return 0;
 }
+
+//int print_startup_time(void)
+//{
+	//unsigned int *counter = (unsigned int *)0x1000000;
+	//char buf[10];
+//
+	//itoa(buf, *counter / 100);
+	//puts(buf);
+	//puts("\n");
+//
+	//return 0;
+//}

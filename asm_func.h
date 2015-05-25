@@ -13,8 +13,8 @@ unsigned int memory_test2(int, int);
 int in_byte(int);
 void out_byte(int, int);
 
-inline void sti(void);
-inline void cli(void);
+void sti(void);
+void cli(void);
 
-inline void hlt(void);
+void hlt(void);
 #endif /* _ASM_FUNC_H_ */

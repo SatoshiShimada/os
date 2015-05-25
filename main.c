@@ -23,7 +23,6 @@ int main(void)
 {
 	extern struct cpu_type cpu;
 	unsigned int *counter = (unsigned int *)0x1000000;
-	char keybuf;
 	char buf[100];
 	char cmd_buf[100];
 

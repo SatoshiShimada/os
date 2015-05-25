@@ -48,6 +48,10 @@ Example)
 
 その後、C言語で書いたmain関数をコールする
 
+Secondly, setup IDT initialize, then PIC & PIT initialize.
+
+Fainaly, variable initialize, then allow interrupt & screen initialize & command mode.
+
 ## メモリマップ
 0x8200: sector2(file: stage2.bin)
 

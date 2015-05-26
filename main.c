@@ -51,6 +51,9 @@ int main(void)
 
 	cmd_buf[0] = '\0';
 	
+	init_qemuvga0(800, 600, 8, 0xc1);
+	for(;;) ;
+
 	for(;;) {
 		hlt();
 		itoa(buf, *counter / 100);

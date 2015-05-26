@@ -44,14 +44,14 @@ int main(void)
 	memory_free(0x00001000, 0x0009e000);
 	memory_free(0x00400000, memory_total - 0x00400000);
 
-	init_screen();
+	//init_screen();
 
 	/* Welcome message & print information */
-	puts("Welcome to My OperatingSystem\n$ ");
+	//puts("Welcome to My OperatingSystem\n$ ");
 
 	cmd_buf[0] = '\0';
 	
-	init_qemuvga0(800, 600, 8, 0xc1);
+	
 	for(;;) ;
 
 	for(;;) {

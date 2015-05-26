@@ -7,9 +7,24 @@
 after_MBR:
 
 # change screen mode
-	mov		$0x13, %al
-	mov		$0x00, %ah
+	mov		$0x11b + 0x4000, %bx
+	mov		$0x4f02, %ax
 	int		$0x10
+
+	mov		$0x9000, %ax
+	mov		%ax,%es
+	mov		$0, %di
+	mov		$0x11b, %cx
+	mov		$0x4f01, %ax
+	int		$0x10
+	#mov		0x28(%es,%di), %eax
+	#mov		0x28(,%es, 4), %eax
+	#movl	40(%es), %eax
+	#movl	40(%di, %es, 4), %eax
+	mov		$0x9000, %di
+	movl	0x28(%di), %eax
+	mov		%eax, (0x1fff)
+
 
 	mov		$msg, %si
 print_msg:

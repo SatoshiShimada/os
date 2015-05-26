@@ -12,7 +12,7 @@ SRCFILE= \
 stage2.s main.c put_font.c test_processor.c \
 asm_func.s memory_test.c print.c idt.c pic.c \
 shell.c memory.c fat12.c fdd2.c \
-screen_setup.c \
+put_font_11B.c \
 ./interrupt_handler/keycode_encoder.c \
 ./interrupt_device/timer.c
 
@@ -20,7 +20,7 @@ OBJFILE= \
 stage2.o main.o put_font.o asm_func.o test_processor.o \
 memory_test.o print.o idt.o pic.o timer.o keycode_encoder.o \
 shell.o memory.o fat12.o fdd2.o \
-screen_setup.o \
+put_font_11B.o \
 handler20.o handler21.o handler26.o
 
 

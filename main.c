@@ -15,6 +15,8 @@
 KEYCODE keycode;
 unsigned int memory_total;
 
+int init_screen_(void);
+
 /*
  * called by asembler 
  * entry point
@@ -45,12 +47,12 @@ int main(void)
 	memory_free(0x00400000, memory_total - 0x00400000);
 
 	//init_screen();
+	init_screen_();
 
 	/* Welcome message & print information */
 	//puts("Welcome to My OperatingSystem\n$ ");
 
 	cmd_buf[0] = '\0';
-	
 	
 	for(;;) ;
 

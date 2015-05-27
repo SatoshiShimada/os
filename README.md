@@ -5,6 +5,12 @@ Target: x86 IntelArchitecture 32bit
 
 ## 概要
 
+アセンブリ言語とC言語で開発
+
+Linux環境で作業
+
+実機ではなくエミュレータで動作確認
+
 ### 使用　開発環境
 
 * エミュレータ: qemu(version 2.2.1)
@@ -15,8 +21,12 @@ Target: x86 IntelArchitecture 32bit
 
 * 想定しているストレージ: フロッピーディスク
 
-* command `mformat` `mcopy`
-pacman -S mtools
+* 必要なコマンド
+
+** `mformat` `mcopy`
+pacman -S mtools でインストール可能(ArchLinux)
+
+** `gcc objcopy` (GNU Binary Utilitys)
 
 ### 使用方法
 
@@ -41,6 +51,12 @@ Example)
 ### メモ
 
 ファイルシステム: FAT12
+
+カーネルとシェルを分けて考える？
+
+CUIで動作する
+
+ビデオドライバ、テキストモードに対応させる
 
 マスターブートレコーダ: 0xC200にジャンプしてFDDの2セクター目からのプログラムを実行する
 
@@ -71,14 +87,16 @@ Fainaly, variable initialize, then allow interrupt & screen initialize & command
 
 ## 実装予定
 
-* TaskSwtich
+* GUI画面の搭載(高解像度)
+
+* TaskSwtich(マルチタスク)
 
 * メモリー管理
 
-* FileSystem: FAT12
+* FileSystem: FAT12(ファイル書き込み)
 
 * The text editor(like vi)
 
 ## 既知のバグ
 
-* コマンドの途中でエミュレータが異常終了する
+* exeコマンドの途中でエミュレータが異常終了する (アドレス指定のミス？)

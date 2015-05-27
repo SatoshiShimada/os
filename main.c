@@ -16,6 +16,7 @@ KEYCODE keycode;
 unsigned int memory_total;
 
 int init_screen_(void);
+int print_font(int, int);
 
 /*
  * called by asembler 
@@ -54,6 +55,12 @@ int main(void)
 
 	cmd_buf[0] = '\0';
 	
+	print_font(0, 0);
+	print_font(16, 0);
+	print_font(32, 0);
+	print_font(0, 16);
+	print_font(0, 32);
+	print_font(32, 32);
 	for(;;) ;
 
 	for(;;) {

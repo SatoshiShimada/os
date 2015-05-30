@@ -68,6 +68,12 @@ Secondly, setup IDT initialize, then PIC & PIT initialize.
 
 Fainaly, variable initialize, then allow interrupt & screen initialize & command mode.
 
+command:
+
+shutdown, cat, ls, cp (need file system)
+
+vim, ping, ps, gcc
+
 ## メモリマップ
 0x8200: sector2(file: stage2.bin)
 

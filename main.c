@@ -17,6 +17,8 @@ KEYCODE keycode;
 unsigned int memory_total;
 SCREEN_INFO screen;
 
+int put16(char);
+
 /*
  * called by asembler 
  * entry point
@@ -47,7 +49,8 @@ int main(void)
 	memory_free(0x00400000, memory_total - 0x00400000);
 
 	init_screen();
-	init_vga0(1024, 768, 8, 0x41);
+	init_vga0(1024, 768, 32, 0x41);
+	put16(0);
 	for(;;) ;
 
 	/* Welcome message & print information */

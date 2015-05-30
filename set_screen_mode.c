@@ -42,7 +42,8 @@ int init_vga0(int x, int y, int c, int flag)
 	if((flag & 0x40) == 0)
 		screen.vram = (char *)0x000a0000;
 	else
-		screen.vram = (char *)0xe0000000;
+		//screen.vram = (char *)0xe0000000;
+		screen.vram = (char *)0xfd000000;
 
 	return 0;
 }

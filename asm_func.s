@@ -5,6 +5,7 @@
 .globl sti, cli
 .globl hlt
 .globl out_word
+.globl out_dword
 
 load_eflags:
 	pushf
@@ -38,7 +39,7 @@ in_byte: # int in_byte(int port);
 
 out_byte: # void out_byte(int port, int data);
 	mov		4(%esp), %edx
-	mov		8(%esp), %eax
+	mov		8(%esp), %al
 	out		%al, %dx
 	ret
 
@@ -47,6 +48,11 @@ out_word: # void out_word(int port, int data);
 	mov		8(%esp), %eax
 	out		%ax, %dx
 	ret
+
+out_dword: # void out_dword(int port, int data);
+	mov		4(%esp), %edx
+	mov		8(%esp), %eax
+	out		%eax, %dx
 
 sti:
 	sti

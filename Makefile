@@ -12,15 +12,15 @@ SRCFILE= \
 stage2.s main.c put_font.c test_processor.c \
 asm_func.s memory_test.c print.c idt.c pic.c \
 shell.c memory.c fat12.c fdd2.c \
-put_font_11B.c \
+set_screen_mode.c \
 ./interrupt_handler/keycode_encoder.c \
 ./interrupt_device/timer.c
 
 OBJFILE= \
 stage2.o main.o put_font.o asm_func.o test_processor.o \
 memory_test.o print.o idt.o pic.o timer.o keycode_encoder.o \
+set_screen_mode.o \
 shell.o memory.o fat12.o fdd2.o \
-put_font_11B.o \
 handler20.o handler21.o handler26.o
 
 
@@ -29,10 +29,10 @@ handler20.o handler21.o handler26.o
 $(IMG): mbr.bin stage2.bin
 	mformat -f 1440 -C -B mbr.bin -i $(IMG) ::
 	mcopy stage2.bin -i $(IMG) ::
-	mcopy mbr.ls -i $(IMG) ::
-	mcopy main.c -i $(IMG) ::
+	#mcopy mbr.ls -i $(IMG) ::
+	#mcopy main.c -i $(IMG) ::
 	#mcopy fat.txt -i $(IMG) ::
-	mcopy exe/exe -i $(IMG) ::
+	#mcopy exe/exe -i $(IMG) ::
 
 run: $(IMG)
 	$(QEMU) $(QEMUOPT) -fda $(IMG)

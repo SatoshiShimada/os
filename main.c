@@ -11,12 +11,11 @@
 #include "memory.h"
 #include "fat12.h"
 #include "fdd2.h"
+#include "set_screen_mode.h"
 
 KEYCODE keycode;
 unsigned int memory_total;
-
-int init_screen_(void);
-int print_font(int, int);
+SCREEN_INFO screen;
 
 /*
  * called by asembler 
@@ -47,21 +46,14 @@ int main(void)
 	memory_free(0x00001000, 0x0009e000);
 	memory_free(0x00400000, memory_total - 0x00400000);
 
-	//init_screen();
-	init_screen_();
+	init_screen();
+	init_vga0(1024, 768, 8, 0x41);
+	for(;;) ;
 
 	/* Welcome message & print information */
-	//puts("Welcome to My OperatingSystem\n$ ");
+	puts("Welcome to My OperatingSystem\n$ ");
 
 	cmd_buf[0] = '\0';
-	
-	print_font(0, 0);
-	print_font(16, 0);
-	print_font(32, 0);
-	print_font(0, 16);
-	print_font(0, 32);
-	print_font(32, 32);
-	for(;;) ;
 
 	for(;;) {
 		hlt();

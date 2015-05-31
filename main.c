@@ -17,7 +17,7 @@ KEYCODE keycode;
 unsigned int memory_total;
 SCREEN_INFO screen;
 
-int put16(char);
+int put16(int, int, char);
 
 /*
  * called by asembler 
@@ -50,7 +50,10 @@ int main(void)
 
 	init_screen();
 	init_vga0(1024, 768, 32, 0x41);
-	put16(0);
+	for(i = 0; i < 10; i++) {
+		put16(i * 16, 0, i);
+	}
+	
 	for(;;) ;
 
 	/* Welcome message & print information */

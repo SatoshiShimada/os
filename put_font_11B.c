@@ -2,9 +2,31 @@
 #define SCRN_X		1280
 #define SCRN_Y		1024
 
+extern unsigned short font_bitmap_data[];
+
 int put_pixel(int x, int y, unsigned char r, unsigned char g, unsigned char b);
+int print_font(int, int, unsigned char);
 
 char *vram = (char *)0xFD000000;
+
+int puts_(char *str)
+{
+	int i;
+	static int x = 0;
+	static int y = 0;
+
+	for(i = 0; str[i] != '\0'; i++) {
+		print_font(x, y, str[i]);
+		if(x < SCRN_X) {
+			x += 16;
+		} else {
+			x = 0;
+			y += 16;
+		}
+	}
+
+	return 0;
+}
 
 int init_screen_(void)
 {
@@ -24,38 +46,34 @@ int init_screen_(void)
 	return 0;
 }
 
-unsigned char font_A[] = {
-	0x00, 0x00,
-	0x01, 0x80,
-	0x03, 0xc0,
-	0x02, 0x40,
-	0x06, 0x60,
-	0x0c, 0x30,
-	0x0c, 0x30,
-	0x18, 0x18,
-	0x18, 0x18,
-	0x1f, 0xf8,
-	0x3f, 0xfc,
-	0x30, 0x0c,
-	0x30, 0x0c,
-	0x30, 0x0c,
-	0x30, 0x0c,
-	0x00, 0x00,
-};
-
-//int print_font(char *vram, char font)
-int print_font(int init_x, int init_y)
+int print_font(int init_x, int init_y, unsigned char ch)
 {
 	int i;
-	unsigned char font_data;
+	unsigned short font_data;
 	int x = 0, y = 0;
 
 	x = init_x;
 	y = init_y;
 
-	for(i = 0; i < 16 * 2; i++) {
-		font_data = font_A[i];
+	for(i = 0; i < 16; i++) {
+		font_data = font_bitmap_data[ch * 16 + i];
 
+		if(font_data & 0x8000) put_pixel(x, y, 0x00, 0x00, 0x00);
+		x++;
+		if(font_data & 0x4000) put_pixel(x, y, 0x00, 0x00, 0x00);
+		x++;
+		if(font_data & 0x2000) put_pixel(x, y, 0x00, 0x00, 0x00);
+		x++;
+		if(font_data & 0x1000) put_pixel(x, y, 0x00, 0x00, 0x00);
+		x++;
+		if(font_data & 0x0800) put_pixel(x, y, 0x00, 0x00, 0x00);
+		x++;
+		if(font_data & 0x0400) put_pixel(x, y, 0x00, 0x00, 0x00);
+		x++;
+		if(font_data & 0x0200) put_pixel(x, y, 0x00, 0x00, 0x00);
+		x++;
+		if(font_data & 0x0100) put_pixel(x, y, 0x00, 0x00, 0x00);
+		x++;
 		if(font_data & 0x80) put_pixel(x, y, 0x00, 0x00, 0x00);
 		x++;
 		if(font_data & 0x40) put_pixel(x, y, 0x00, 0x00, 0x00);
@@ -73,10 +91,8 @@ int print_font(int init_x, int init_y)
 		if(font_data & 0x01) put_pixel(x, y, 0x00, 0x00, 0x00);
 		x++;
 
-		if(i % 2 == 1) {
-			y++;
-			x = init_x;
-		}
+		y++;
+		x = init_x;
 	}
 
 	return 0;

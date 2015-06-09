@@ -1,5 +1,4 @@
 
-int int_to_ascii(char *, unsigned int);
 int itoa(char *, unsigned int);
 
 char *strcat(char *, const char *);

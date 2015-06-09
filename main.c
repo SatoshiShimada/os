@@ -56,7 +56,12 @@ int main(void)
 
 	cmd_buf[0] = '\0';
 	
-	puts_("ABCDEFGHIJKLMNOPQRSTUVWXYZ");
+	//puts_("ABCDEFGHIJKLMNOPQRSTUVWXYZ");
+	buf[1] = '\0';
+	for(i = 0; i < 0xff / 2; i++) {
+		buf[0] = i;
+		puts_(buf);
+	}
 	for(;;) ;
 
 	for(;;) {

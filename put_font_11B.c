@@ -17,7 +17,7 @@ int puts_(char *str)
 
 	for(i = 0; str[i] != '\0'; i++) {
 		print_font(x, y, str[i]);
-		if(x < SCRN_X) {
+		if(x < SCRN_X - 16) {
 			x += 16;
 		} else {
 			x = 0;

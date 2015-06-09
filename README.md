@@ -13,11 +13,11 @@ Linux環境で作業
 
 ### 使用　開発環境
 
-* エミュレータ: qemu(version 2.2.1)
+* エミュレータ: qemu(version 2.2.1 or 2.3.0)
 
-* コンパイラ: gcc(version 4.9.2)
+* コンパイラ: gcc(version 4.9.2 or 5.1.0)
 
-* 開発ホストOS: Linux
+* 開発ホストOS: Linux(Arch Linux)
 
 * 想定しているストレージ: フロッピーディスク
 
@@ -54,7 +54,7 @@ Example)
 
 カーネルとシェルを分けて考える？
 
-CUIで動作する
+CUI, GUIで動作する
 
 ビデオドライバ、テキストモードに対応させる
 

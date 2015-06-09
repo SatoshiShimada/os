@@ -1,22 +1,21 @@
 
+#include "put_font_11B.h"
+
 #define SCRN_X		1280
 #define SCRN_Y		1024
 
 extern unsigned short font_bitmap_data[];
 
-int put_pixel(int x, int y, unsigned char r, unsigned char g, unsigned char b);
-int print_font(int, int, unsigned char);
-
 char *vram = (char *)0xFD000000;
 
-int puts_(char *str)
+int puts_11B(char *str)
 {
 	int i;
 	static int x = 0;
 	static int y = 0;
 
 	for(i = 0; str[i] != '\0'; i++) {
-		print_font(x, y, str[i]);
+		print_font_11B(x, y, str[i]);
 		if(x < SCRN_X - 16) {
 			x += 16;
 		} else {
@@ -28,7 +27,7 @@ int puts_(char *str)
 	return 0;
 }
 
-int init_screen_(void)
+int init_screen_11B(void)
 {
 	int x, y;
 	int i = 0;
@@ -46,7 +45,7 @@ int init_screen_(void)
 	return 0;
 }
 
-int print_font(int init_x, int init_y, unsigned char ch)
+int print_font_11B(int init_x, int init_y, unsigned char ch)
 {
 	int i;
 	unsigned short font_data;

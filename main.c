@@ -15,10 +15,6 @@
 KEYCODE keycode;
 unsigned int memory_total;
 
-int init_screen_(void);
-int print_font(int, int, unsigned char);
-int puts_(char *);
-
 /*
  * called by asembler 
  * entry point
@@ -48,26 +44,25 @@ int main(void)
 	memory_free(0x00001000, 0x0009e000);
 	memory_free(0x00400000, memory_total - 0x00400000);
 
-	//init_screen();
-	init_screen_();
+	init_screen();
 
 	/* Welcome message & print information */
-	//puts("Welcome to My OperatingSystem\n$ ");
+	puts("Welcome to My OperatingSystem\n$ ");
 
 	cmd_buf[0] = '\0';
 	
-	//puts_("ABCDEFGHIJKLMNOPQRSTUVWXYZ");
 	buf[1] = '\0';
 	for(i = 0; i < 0xff / 2; i++) {
 		buf[0] = i;
-		puts_(buf);
+		puts(buf);
 	}
+
 	for(;;) ;
 
 	for(;;) {
 		hlt();
 		itoa(buf, *counter / 100);
-		puts_position(buf, X_CHAR_COUNT - 3, 0);
+		//puts_position(buf, X_CHAR_COUNT - 3, 0);
 
 		buf[0] = get_keycode_ascii();
 		buf[1] = '\0';

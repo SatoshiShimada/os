@@ -5,6 +5,7 @@
 
 static int screen_mode = 1;
 
+
 int init_screen(void)
 {
 	if(screen_mode == 0) {
@@ -24,3 +25,4 @@ int puts(char *str)
 	}
 	return 0;
 }
+

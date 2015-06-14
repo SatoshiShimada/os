@@ -12,7 +12,6 @@ SRCFILE= \
 stage2.s main.c put_font.c test_processor.c \
 asm_func.s memory_test.c print.c idt.c pic.c \
 shell.c memory.c fat12.c fdd2.c \
-put_font.c \
 put_font_11B.c put_font_default.c \
 font_data.c \
 ./interrupt_handler/keycode_encoder.c \
@@ -22,7 +21,6 @@ OBJFILE= \
 stage2.o main.o put_font.o asm_func.o test_processor.o \
 memory_test.o print.o idt.o pic.o timer.o keycode_encoder.o \
 shell.o memory.o fat12.o fdd2.o \
-put_font.o \
 put_font_11B.o put_font_default.o \
 font_data.o \
 handler20.o handler21.o handler26.o
@@ -56,3 +54,4 @@ stage2.bin: stage2.ls $(SRCFILE)
 	$(CC) $(CFLAGS) -m32 -c ./interrupt_handler/handler26.s -o handler26.o
 	$(CC) $(CFLAGS) -m32 -c $(SRCFILE)
 	ld -Tstage2.ls -melf_i386 -e after_MBR -o stage2.bin $(OBJFILE)
+

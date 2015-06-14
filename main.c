@@ -57,8 +57,6 @@ int main(void)
 		puts(buf);
 	}
 
-	for(;;) ;
-
 	for(;;) {
 		hlt();
 		itoa(buf, *counter / 100);

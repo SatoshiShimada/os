@@ -15,12 +15,17 @@ int puts_11B(char *str)
 	static int y = 0;
 
 	for(i = 0; str[i] != '\0'; i++) {
-		print_font_11B(x, y, str[i]);
-		if(x < SCRN_X - 16) {
-			x += 16;
-		} else {
+		if(str[i] == '\n') {
 			x = 0;
 			y += 16;
+		} else {
+			print_font_11B(x, y, str[i]);
+			if(x < SCRN_X - 16) {
+				x += 16;
+			} else {
+				x = 0;
+				y += 16;
+			}
 		}
 	}
 

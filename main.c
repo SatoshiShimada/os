@@ -65,12 +65,12 @@ int main(void)
 		buf[0] = get_keycode_ascii();
 		buf[1] = '\0';
 		if(buf[0] == '\n') {
-			puts("\n ");
+			puts("\n");
 			//do_command(cmd_buf);
 			puts("$ ");
 			cmd_buf[0] = '\0'; /* clear buf */
 		} else if(buf[0] == '\t') {
-
+			puts("    ");
 		} else if(buf[0] != 0) {
 			puts(buf);
 			if(buf[0] == '\b') {

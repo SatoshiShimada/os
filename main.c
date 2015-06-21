@@ -47,20 +47,16 @@ int main(void)
 	init_screen();
 
 	/* Welcome message & print information */
-	puts("Welcome to My OperatingSystem\n$ ");
+	puts("Welcome to My OperatingSystem\n");
 
-	cmd_buf[0] = '\0';
-	
-	buf[1] = '\0';
-	for(i = 0; i < 0xff / 2; i++) {
-		buf[0] = i;
-		puts(buf);
-	}
+	itoa(buf, memory_total);
+	puts("Memory: ");
+	puts(buf);
+	puts("\n");
 
 	for(;;) {
 		hlt();
 		itoa(buf, *counter / 100);
-		//puts_position(buf, X_CHAR_COUNT - 3, 0);
 
 		buf[0] = get_keycode_ascii();
 		buf[1] = '\0';
@@ -73,6 +69,7 @@ int main(void)
 			puts("    ");
 		} else if(buf[0] != 0) {
 			puts(buf);
+			if(strlen(cmd_buf) >= 100) continue;
 			if(buf[0] == '\b') {
 				for(i = 0; cmd_buf[i] != 0; i++) ;
 				cmd_buf[i - 1] = 0;

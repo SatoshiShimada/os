@@ -58,6 +58,14 @@ int strcmp(const char *str1, const char *str2)
 	return 0;
 }
 
+int strlen(const char *s)
+{
+	char *c;
+
+	for(c = (char *)s; *c != '\0'; c++) ;
+	return (int)(s - c);
+}
+
 void *memset(void *buf, int ch, unsigned int size)
 {
 	unsigned char *dist = (unsigned char *)buf;

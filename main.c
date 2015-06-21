@@ -47,7 +47,7 @@ int main(void)
 	init_screen();
 
 	/* Welcome message & print information */
-	//puts("Welcome to My OperatingSystem\n$ ");
+	puts("Welcome to My OperatingSystem\n$ ");
 
 	cmd_buf[0] = '\0';
 	

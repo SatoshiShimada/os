@@ -49,10 +49,10 @@ int main(void)
 	/* Welcome message & print information */
 	puts("Welcome to My OperatingSystem\n");
 
-	itoa(buf, memory_total);
+	itoa(buf, memory_total / (1024 * 1024));
 	puts("Memory: ");
 	puts(buf);
-	puts("\n");
+	puts(" MB\n");
 
 	for(;;) {
 		hlt();

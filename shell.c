@@ -1,6 +1,5 @@
 #include "print.h"
 #include "put_font.h"
-#include "memory.h"
 #include "shell.h"
 #include "fat12.h"
 
@@ -12,11 +11,7 @@ int execute_file(void);
 
 int do_command(const char *command)
 {
-	if(!strcmp(command, "memory")) {
-		print_memory_size();
-	} else if(!strcmp(command, "free")) {
-		print_memory_free();
-	} else if(!strcmp(command, "ls")) {
+	if(!strcmp(command, "ls")) {
 		print_rootdir_file();
 	} else if(!strcmp(command, "cat")) {
 		view_file_text();
@@ -34,6 +29,7 @@ int do_command(const char *command)
 	return 0;
 }
 
+/*
 int print_memory_size(void)
 {
 	char buf[20];
@@ -59,6 +55,7 @@ int print_memory_free(void)
 
 	return 0;
 }
+*/
 
 int print_rootdir_file(void)
 {

@@ -40,10 +40,6 @@ int main(void)
 	test_processor();
 	memory_total = memory_test(cpu, 0x00400000, 0xffffffff);
 
-	memory_control_init();
-	memory_free(0x00001000, 0x0009e000);
-	memory_free(0x00400000, memory_total - 0x00400000);
-
 	init_screen();
 
 	/* Welcome message & print information */

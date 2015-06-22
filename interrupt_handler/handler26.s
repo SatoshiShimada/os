@@ -1,7 +1,7 @@
 
 .globl interrupt_handler26
 
-# keyboard
+# floppy disk controller
 interrupt_handler26:
 	pusha
 	push	%ds
@@ -11,9 +11,10 @@ interrupt_handler26:
 	mov		%ax, %es
 
 	#call	function
-	mov		$0xb8000, %esi
-	movb	$'X', (%esi)
-L0:	jmp		L0
+	#mov		$0xb8000, %esi
+	#movb	$'X', (%esi)
+#L0:
+	#jmp	L0
 
 	mov		$0x20, %al
 	out		%al, $0x20

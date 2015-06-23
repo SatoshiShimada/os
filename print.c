@@ -41,19 +41,13 @@ int strcmp(const char *str1, const char *str2)
 {
 	int i;
 
-	if(str1[0] == str2[0] && str1[0] == '\0') return 0;
-
-	i = -1;
-	do {
-		i++;
-		if(str1[i] != str2[i]) {
-			if(str1[i] > str2[i]) {
-				return 1;
-			} else {
-				return -1;
-			}
+	for(i = 0; str1[i] != '\0' && str2[i] != '\0'; i++) {
+		if(str1[i] > str2[i]) {
+			return 1;
+		} else {
+			return -1;
 		}
-	} while((str1[i] != '\0') && (str2[i] != '\0'));
+	}
 
 	return 0;
 }

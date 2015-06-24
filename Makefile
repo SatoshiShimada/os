@@ -5,7 +5,7 @@ CFLAGS=-Wall -nostdlib -O0
 IMG=os.img
 
 QEMU=qemu-system-x86_64
-QEMUOPT=-m 256 -vga std
+QEMUOPT=-m 1024 -vga std
 
 
 SRCFILE= \

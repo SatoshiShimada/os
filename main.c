@@ -7,7 +7,7 @@
 #include "pic.h"
 #include "keycode.h"
 #include "./interrupt_device/interrupt.h"
-#include "shell.h"
+//#include "shell.h"
 #include "memory.h"
 #include "fat12.h"
 #include "fdd2.h"

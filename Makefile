@@ -5,7 +5,8 @@ CFLAGS=-Wall -nostdlib -O0
 IMG=os.img
 
 QEMU=qemu-system-x86_64
-QEMUOPT=-m 1024 -vga std
+# keyboard layout 'en-us' or 'jp'
+QEMUOPT=-m 1024 -vga std -k en-us -name "MY OS" -snapshot -cpu core2duo
 
 
 SRCFILE= \
@@ -57,3 +58,5 @@ stage2.bin: stage2.ls $(SRCFILE)
 	$(CC) $(CFLAGS) -m32 -c $(SRCFILE)
 	ld -Tstage2.ls -melf_i386 -e after_MBR -o stage2.bin $(OBJFILE)
 
+tag:
+	ctags -R

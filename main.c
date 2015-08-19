@@ -34,10 +34,12 @@ int main(void)
 	*counter = 0;
 	set_keytable(KEY_EN1);
 	keycode.len = 0;
-	keycode.i_write = keycode.i_read = 0;
+	keycode.i_write = keycode.i_read = 0; /* index of write, read */
 
-	sti();
+	sti(); /* enable interrupt */
+	/* cpu after 486 check. if after 486 disable cache */
 	test_processor();
+	exe_cpuid();
 	memory_total = memory_test(cpu, 0x00400000, 0xffffffff);
 
 	init_screen();
@@ -49,6 +51,12 @@ int main(void)
 	puts("Memory: ");
 	puts(buf);
 	puts(" MB\n");
+	puts("CPU: ");
+	memcpy(buf, cpu.vendor_id, 16);
+	buf[16] = '\0';
+	puts(buf);
+	puts("\n");
+	puts(cpu.processor_brand_string);
 
 	for(;;) {
 		hlt();

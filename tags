@@ -145,7 +145,7 @@ PORT_PIC_SLAVE_IMR	pic.c	11;"	d	file:
 PORT_PIC_SLAVE_STATUS	pic.c	9;"	d	file:
 PUT_FONT_H	put_font.h	3;"	d
 QEMU	Makefile	/^QEMU=qemu-system-x86_64$/;"	m
-QEMUOPT	Makefile	/^QEMUOPT=-m 1024 -vga std$/;"	m
+QEMUOPT	Makefile	/^QEMUOPT=-m 1024 -vga std -k en-us -name "MY OS" -snapshot -cpu core2duo$/;"	m
 ROOTDIR_MAX_FILE	fat12.c	5;"	d	file:
 SCRN_X	put_font_11B.c	4;"	d	file:
 SCRN_Y	put_font_11B.c	5;"	d	file:
@@ -171,6 +171,8 @@ cluster_first	fat12.h	/^	unsigned short cluster_first;$/;"	m	struct:FAT12_FILE
 code	keycode.h	/^	unsigned char code[32];$/;"	m	struct:__anon1
 cpu	test_processor.c	/^struct cpu_type cpu;$/;"	v	typeref:struct:cpu_type
 cpu_type	test_processor.h	/^struct cpu_type {$/;"	s
+cpuid_processor_brand_string	asm_func.s	/^cpuid_processor_brand_string:$/;"	l
+cpuid_vendor_id	asm_func.s	/^cpuid_vendor_id:$/;"	l
 cr3	tss.h	/^		backlink, esp0, ss0, esp1, ss1, esp2, ss2, cr3,$/;"	m	struct:__anon4
 cs	tss.h	/^		es, cs, ss, ds, fs, gs,$/;"	m	struct:__anon4
 do_command	shell.c	/^int do_command(const char *command)$/;"	f
@@ -191,6 +193,7 @@ esp	tss.h	/^		eip, eflags, eax, ecx, edx, ebx, esp, ebx, esi, edi,$/;"	m	struct:
 esp0	tss.h	/^		backlink, esp0, ss0, esp1, ss1, esp2, ss2, cr3,$/;"	m	struct:__anon4
 esp1	tss.h	/^		backlink, esp0, ss0, esp1, ss1, esp2, ss2, cr3,$/;"	m	struct:__anon4
 esp2	tss.h	/^		backlink, esp0, ss0, esp1, ss1, esp2, ss2, cr3,$/;"	m	struct:__anon4
+exe_cpuid	test_processor.c	/^int exe_cpuid(void)$/;"	f
 execute_file	shell.c	/^int execute_file(void)$/;"	f
 ext	fat12.h	/^	unsigned char  ext[3];$/;"	m	struct:FAT12_FILE
 f_after486	test_processor.h	/^	int f_after486;$/;"	m	struct:cpu_type
@@ -274,6 +277,7 @@ print_message	mbr.s	/^print_message:$/;"	l
 print_msg	stage2.s	/^print_msg:$/;"	l
 print_read_success_message	mbr.s	/^print_read_success_message:$/;"	l
 print_rootdir_file	shell.c	/^int print_rootdir_file(void)$/;"	f
+processor_brand_string	test_processor.h	/^	char processor_brand_string[48];$/;"	m	struct:cpu_type
 protected_idt	stage2.s	/^protected_idt:$/;"	l
 protected_segment	stage2.s	/^protected_segment:$/;"	l
 put_char_default	put_font_default.c	/^int put_char_default(char c, int color, int bgcolor, int x, int y)$/;"	f
@@ -316,6 +320,7 @@ strlen	print.c	/^int strlen(const char *s)$/;"	f
 test_processor	test_processor.c	/^int test_processor(void)$/;"	f
 time	fat12.h	/^	unsigned char  time;$/;"	m	struct:FAT12_FILE
 type	fat12.h	/^	unsigned char  type;$/;"	m	struct:FAT12_FILE
+vendor_id	test_processor.h	/^	char vendor_id[16];$/;"	m	struct:cpu_type
 view_file_text	shell.c	/^int view_file_text(void)$/;"	f
 vram	put_font_11B.c	/^char *vram = (char *)0xFD000000;$/;"	v
 write_date	fat12.h	/^	unsigned short write_date;$/;"	m	struct:FAT12_FILE

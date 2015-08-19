@@ -11,21 +11,21 @@ QEMUOPT=-m 1024 -vga std
 SRCFILE= \
 stage2.s main.c put_font.c test_processor.c \
 asm_func.s memory_test.c print.c idt.c pic.c \
-# shell.c
 memory.c fat12.c fdd2.c \
 put_font_11B.c put_font_default.c \
 font_data.c \
 ./interrupt_handler/keycode_encoder.c \
 ./interrupt_device/timer.c
+# shell.c
 
 OBJFILE= \
 stage2.o main.o put_font.o asm_func.o test_processor.o \
 memory_test.o print.o idt.o pic.o timer.o keycode_encoder.o \
-# shell.o
 memory.o fat12.o fdd2.o \
 put_font_11B.o put_font_default.o \
 font_data.o \
 handler20.o handler21.o handler26.o
+# shell.o
 
 
 # make rule

@@ -1,0 +1,322 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+CC	Makefile	/^CC=gcc$/;"	m
+CC	exe/Makefile	/^CC=gcc$/;"	m
+CFLAGS	Makefile	/^CFLAGS=-Wall -nostdlib -O0$/;"	m
+COLOR_BLACK	put_font_default.h	32;"	d
+COLOR_BLUE	put_font_default.h	33;"	d
+COLOR_BROWN	put_font_default.h	38;"	d
+COLOR_CYAN	put_font_default.h	35;"	d
+COLOR_DARKGRAY	put_font_default.h	40;"	d
+COLOR_GREEN	put_font_default.h	34;"	d
+COLOR_LIGHTBLUE	put_font_default.h	41;"	d
+COLOR_LIGHTBROWN	put_font_default.h	46;"	d
+COLOR_LIGHTCYAN	put_font_default.h	43;"	d
+COLOR_LIGHTGRAY	put_font_default.h	39;"	d
+COLOR_LIGHTGREEN	put_font_default.h	42;"	d
+COLOR_LIGHTMAGENTA	put_font_default.h	45;"	d
+COLOR_LIGHTRED	put_font_default.h	44;"	d
+COLOR_MAGENTA	put_font_default.h	37;"	d
+COLOR_RED	put_font_default.h	36;"	d
+COLOR_WHITE	put_font_default.h	47;"	d
+DEF_FDC_MSR_RQM	fdd2.h	5;"	d
+DEF_FDD_ERROR	fdd.h	3;"	d
+DEF_FDD_MSR_DIO	fdd.c	6;"	d	file:
+DEF_FDD_MSR_RQM	fdd.c	5;"	d	file:
+DEF_FDD_OK	fdd.h	2;"	d
+DEF_FDD_WRITE_COMMAND_RETRY	fdd.c	4;"	d	file:
+DEF_PIT_CLOCK	interrupt_device/timer.c	10;"	d	file:
+DEF_PIT_COMMAND_BINCOUNT_BCD	interrupt_device/timer.c	22;"	d	file:
+DEF_PIT_COMMAND_BINCOUNT_BIN	interrupt_device/timer.c	21;"	d	file:
+DEF_PIT_COMMAND_COUNTER0	interrupt_device/timer.c	36;"	d	file:
+DEF_PIT_COMMAND_COUNTER1	interrupt_device/timer.c	37;"	d	file:
+DEF_PIT_COMMAND_COUNTER2	interrupt_device/timer.c	38;"	d	file:
+DEF_PIT_COMMAND_MASK_BINCOUNT	interrupt_device/timer.c	16;"	d	file:
+DEF_PIT_COMMAND_MASK_COUNTER	interrupt_device/timer.c	19;"	d	file:
+DEF_PIT_COMMAND_MASK_MODE	interrupt_device/timer.c	17;"	d	file:
+DEF_PIT_COMMAND_MASK_RL	interrupt_device/timer.c	18;"	d	file:
+DEF_PIT_COMMAND_MODE_HARDTIG	interrupt_device/timer.c	29;"	d	file:
+DEF_PIT_COMMAND_MODE_PROGONE	interrupt_device/timer.c	25;"	d	file:
+DEF_PIT_COMMAND_MODE_RATEGEN	interrupt_device/timer.c	26;"	d	file:
+DEF_PIT_COMMAND_MODE_SOFTRIG	interrupt_device/timer.c	28;"	d	file:
+DEF_PIT_COMMAND_MODE_SQUAREWAVE	interrupt_device/timer.c	27;"	d	file:
+DEF_PIT_COMMAND_MODE_TERMINAL	interrupt_device/timer.c	24;"	d	file:
+DEF_PIT_COMMAND_RL_DATA	interrupt_device/timer.c	34;"	d	file:
+DEF_PIT_COMMAND_RL_LATCH	interrupt_device/timer.c	31;"	d	file:
+DEF_PIT_COMMAND_RL_LSBONLY	interrupt_device/timer.c	32;"	d	file:
+DEF_PIT_COMMAND_RL_MSBONLY	interrupt_device/timer.c	33;"	d	file:
+DEF_PORT_FDC0_COMMAND	fdd2.h	2;"	d
+DEF_PORT_FDC0_MAIN_STATUS_REGISTER	fdd2.h	3;"	d
+DEF_PORT_FDD_COMMAND	fdd.c	7;"	d	file:
+DEF_PORT_FDD_MSR	fdd.c	8;"	d	file:
+EFLAGS_AC_BIT	test_processor.h	1;"	d
+E_FDC_COMMAND	fdd.h	/^} E_FDC_COMMAND;$/;"	t	typeref:enum:__anon5
+FAT12_FILE	fat12.h	/^struct FAT12_FILE {$/;"	s
+FAT12_FILE_INFO_DIRECTORY	fat12.h	5;"	d
+FAT12_FILE_INFO_HIDDEN	fat12.h	2;"	d
+FAT12_FILE_INFO_NOFILE	fat12.h	4;"	d
+FAT12_FILE_INFO_READONLY	fat12.h	1;"	d
+FAT12_FILE_INFO_SYSTEM	fat12.h	3;"	d
+FAT12_IMAGE_ADDR	fat12.h	18;"	d
+FAT12_OFFSET_FAT_1	fat12.h	20;"	d
+FAT12_OFFSET_FAT_2	fat12.h	21;"	d
+FAT12_OFFSET_FILE	fat12.h	23;"	d
+FAT12_OFFSET_MBR	fat12.h	19;"	d
+FAT12_OFFSET_ROOTDIR	fat12.h	22;"	d
+FDC_COMMAND_CONFIGURE	fdd.h	/^	FDC_COMMAND_CONFIGURE				= 0x13,$/;"	e	enum:__anon5
+FDC_COMMAND_DUMPREG	fdd.h	/^	FDC_COMMAND_DUMPREG					= 0x0e,$/;"	e	enum:__anon5
+FDC_COMMAND_FORMAT_TRACK	fdd.h	/^	FDC_COMMAND_FORMAT_TRACK			= 0x0d,$/;"	e	enum:__anon5
+FDC_COMMAND_LOCK	fdd.h	/^	FDC_COMMAND_LOCK					= 0x14,$/;"	e	enum:__anon5
+FDC_COMMAND_PERPENDICULAR_MODE	fdd.h	/^	FDC_COMMAND_PERPENDICULAR_MODE		= 0x12,$/;"	e	enum:__anon5
+FDC_COMMAND_READ_DATA	fdd.h	/^	FDC_COMMAND_READ_DATA				= 0x06,$/;"	e	enum:__anon5
+FDC_COMMAND_READ_DELETED_DATA	fdd.h	/^	FDC_COMMAND_READ_DELETED_DATA		= 0x0c,$/;"	e	enum:__anon5
+FDC_COMMAND_READ_ID	fdd.h	/^	FDC_COMMAND_READ_ID					= 0x0a,$/;"	e	enum:__anon5
+FDC_COMMAND_READ_TRACK	fdd.h	/^	FDC_COMMAND_READ_TRACK				= 0x02,$/;"	e	enum:__anon5
+FDC_COMMAND_RECALIBRATE	fdd.h	/^	FDC_COMMAND_RECALIBRATE				= 0x07,$/;"	e	enum:__anon5
+FDC_COMMAND_RELATIVE_SEEK	fdd.h	/^	FDC_COMMAND_RELATIVE_SEEK			= 0x8f$/;"	e	enum:__anon5
+FDC_COMMAND_SCAN_EQUAL	fdd.h	/^	FDC_COMMAND_SCAN_EQUAL				= 0x11,$/;"	e	enum:__anon5
+FDC_COMMAND_SCAN_HIGH_OR_EQUAL	fdd.h	/^	FDC_COMMAND_SCAN_HIGH_OR_EQUAL		= 0x1d,$/;"	e	enum:__anon5
+FDC_COMMAND_SCAN_LOW_OR_EQUAL	fdd.h	/^	FDC_COMMAND_SCAN_LOW_OR_EQUAL		= 0x19,$/;"	e	enum:__anon5
+FDC_COMMAND_SEEK	fdd.h	/^	FDC_COMMAND_SEEK					= 0x0f,$/;"	e	enum:__anon5
+FDC_COMMAND_SENSE_DRIVE_STATUS	fdd.h	/^	FDC_COMMAND_SENSE_DRIVE_STATUS		= 0x04,$/;"	e	enum:__anon5
+FDC_COMMAND_SENSE_INTERRUPT_STAUS	fdd.h	/^	FDC_COMMAND_SENSE_INTERRUPT_STAUS	= 0x08,$/;"	e	enum:__anon5
+FDC_COMMAND_SPECIFY	fdd.h	/^	FDC_COMMAND_SPECIFY					= 0x03,$/;"	e	enum:__anon5
+FDC_COMMAND_VERIFY	fdd.h	/^	FDC_COMMAND_VERIFY					= 0x16,$/;"	e	enum:__anon5
+FDC_COMMAND_VERSION	fdd.h	/^	FDC_COMMAND_VERSION					= 0x10,$/;"	e	enum:__anon5
+FDC_COMMAND_WRITE_DATA	fdd.h	/^	FDC_COMMAND_WRITE_DATA				= 0x05,$/;"	e	enum:__anon5
+FDC_COMMAND_WRITE_DELETED_DATA	fdd.h	/^	FDC_COMMAND_WRITE_DELETED_DATA		= 0x09,$/;"	e	enum:__anon5
+FDD_SECTORS_PER_TRACK	fdd2.c	5;"	d	file:
+FD_COMMAND_GAP3_SIZE_3_5inch	fdd2.c	6;"	d	file:
+FD_COMMAND_SECTOR_SIZE_512	fdd2.c	4;"	d	file:
+GATE_DESCRIPTOR	idt.h	/^} __attribute__ ((packed)) GATE_DESCRIPTOR;$/;"	t	typeref:struct:__anon2
+IDTR	idt.h	/^} __attribute__ ((packed)) IDTR;$/;"	t	typeref:struct:__anon3
+IDT_FLAGS_CALL_GATE	idt.h	4;"	d
+IDT_FLAGS_DPL_LV0	idt.h	7;"	d
+IDT_FLAGS_DPL_LV1	idt.h	8;"	d
+IDT_FLAGS_DPL_LV2	idt.h	9;"	d
+IDT_FLAGS_DPL_LV3	idt.h	10;"	d
+IDT_FLAGS_INTGATE_16BIT	idt.h	2;"	d
+IDT_FLAGS_INTGATE_32BIT	idt.h	5;"	d
+IDT_FLAGS_PRESENT	idt.h	11;"	d
+IDT_FLAGS_TRAPGATE	idt.h	6;"	d
+IDT_FLAGS_TSKGATE	idt.h	3;"	d
+IDT_INT_SELECTOR	idt.h	12;"	d
+IMG	Makefile	/^IMG=os.img$/;"	m
+KEYCODE	keycode.h	/^} KEYCODE;$/;"	t	typeref:struct:__anon1
+KEYCODE_BUFFER_SIZE	keycode.h	1;"	d
+KEYCODE_STATUS_ALT_L	keycode.h	7;"	d
+KEYCODE_STATUS_ALT_R	keycode.h	8;"	d
+KEYCODE_STATUS_CONTROL_L	keycode.h	5;"	d
+KEYCODE_STATUS_CONTROL_R	keycode.h	6;"	d
+KEYCODE_STATUS_SHIFT_L	keycode.h	3;"	d
+KEYCODE_STATUS_SHIFT_R	keycode.h	4;"	d
+KEYCODE_STATUS_WINDOWS_L	keycode.h	9;"	d
+KEYCODE_STATUS_WINDOWS_R	keycode.h	10;"	d
+KEY_EN1	keycode.h	12;"	d
+KEY_EN2	keycode.h	14;"	d
+KEY_JA1	keycode.h	13;"	d
+KEY_JA2	keycode.h	15;"	d
+NULL	idt.c	6;"	d	file:
+OBJFILE	Makefile	/^OBJFILE= \\$/;"	m
+PIC_IMR_MASK_IRQ0	pic.c	13;"	d	file:
+PIC_IMR_MASK_IRQ1	pic.c	14;"	d	file:
+PIC_IMR_MASK_IRQ2	pic.c	15;"	d	file:
+PIC_IMR_MASK_IRQ3	pic.c	16;"	d	file:
+PIC_IMR_MASK_IRQ4	pic.c	17;"	d	file:
+PIC_IMR_MASK_IRQ5	pic.c	18;"	d	file:
+PIC_IMR_MASK_IRQ6	pic.c	19;"	d	file:
+PIC_IMR_MASK_IRQ7	pic.c	20;"	d	file:
+PIC_IMR_MASK_IRQ_ALL	pic.c	21;"	d	file:
+PIT_REGISTER_CONTROL	interrupt_device/timer.c	14;"	d	file:
+PIT_REGISTER_COUNTER0	interrupt_device/timer.c	11;"	d	file:
+PIT_REGISTER_COUNTER1	interrupt_device/timer.c	12;"	d	file:
+PIT_REGISTER_COUNTER2	interrupt_device/timer.c	13;"	d	file:
+PORT_PIC_MASTER_COMMAND	pic.c	3;"	d	file:
+PORT_PIC_MASTER_DATA	pic.c	5;"	d	file:
+PORT_PIC_MASTER_IMR	pic.c	6;"	d	file:
+PORT_PIC_MASTER_STATUS	pic.c	4;"	d	file:
+PORT_PIC_SLAVE_COMMAND	pic.c	8;"	d	file:
+PORT_PIC_SLAVE_DATA	pic.c	10;"	d	file:
+PORT_PIC_SLAVE_IMR	pic.c	11;"	d	file:
+PORT_PIC_SLAVE_STATUS	pic.c	9;"	d	file:
+PUT_FONT_H	put_font.h	3;"	d
+QEMU	Makefile	/^QEMU=qemu-system-x86_64$/;"	m
+QEMUOPT	Makefile	/^QEMUOPT=-m 1024 -vga std$/;"	m
+ROOTDIR_MAX_FILE	fat12.c	5;"	d	file:
+SCRN_X	put_font_11B.c	4;"	d	file:
+SCRN_Y	put_font_11B.c	5;"	d	file:
+SRCFILE	Makefile	/^SRCFILE= \\$/;"	m
+TEST_PROCESSOR	test_processor.h	4;"	d
+TSS	tss.h	/^} TSS;$/;"	t	typeref:struct:__anon4
+X_CHAR_COUNT	put_font_default.h	1;"	d
+Y_CHAR_COUNT	put_font_default.h	2;"	d
+_ASM_FUNC_H_	asm_func.h	3;"	d
+a20_wait	stage2.s	/^a20_wait:$/;"	l
+a20_wait2	stage2.s	/^a20_wait2:$/;"	l
+after_BPB	mbr.s	/^after_BPB:$/;"	l
+after_MBR	stage2.s	/^after_MBR:$/;"	l
+backlink	tss.h	/^		backlink, esp0, ss0, esp1, ss1, esp2, ss2, cr3,$/;"	m	struct:__anon4
+base	idt.h	/^	GATE_DESCRIPTOR *base;$/;"	m	struct:__anon3
+baseHigh	idt.h	/^	unsigned short baseHigh;$/;"	m	struct:__anon2
+baseLow	idt.h	/^	unsigned short baseLow;$/;"	m	struct:__anon2
+cache_disable	asm_func.s	/^cache_disable:$/;"	l
+cache_enable	asm_func.s	/^cache_enable:$/;"	l
+cli	asm_func.s	/^cli:$/;"	l
+cluster	fat12.h	/^	unsigned short cluster;$/;"	m	struct:FAT12_FILE
+cluster_first	fat12.h	/^	unsigned short cluster_first;$/;"	m	struct:FAT12_FILE
+code	keycode.h	/^	unsigned char code[32];$/;"	m	struct:__anon1
+cpu	test_processor.c	/^struct cpu_type cpu;$/;"	v	typeref:struct:cpu_type
+cpu_type	test_processor.h	/^struct cpu_type {$/;"	s
+cr3	tss.h	/^		backlink, esp0, ss0, esp1, ss1, esp2, ss2, cr3,$/;"	m	struct:__anon4
+cs	tss.h	/^		es, cs, ss, ds, fs, gs,$/;"	m	struct:__anon4
+do_command	shell.c	/^int do_command(const char *command)$/;"	f
+ds	tss.h	/^		es, cs, ss, ds, fs, gs,$/;"	m	struct:__anon4
+eax	tss.h	/^		eip, eflags, eax, ecx, edx, ebx, esp, ebx, esi, edi,$/;"	m	struct:__anon4
+ebx	tss.h	/^		eip, eflags, eax, ecx, edx, ebx, esp, ebx, esi, edi,$/;"	m	struct:__anon4
+ecx	tss.h	/^		eip, eflags, eax, ecx, edx, ebx, esp, ebx, esi, edi,$/;"	m	struct:__anon4
+edi	tss.h	/^		eip, eflags, eax, ecx, edx, ebx, esp, ebx, esi, edi,$/;"	m	struct:__anon4
+edx	tss.h	/^		eip, eflags, eax, ecx, edx, ebx, esp, ebx, esi, edi,$/;"	m	struct:__anon4
+eflags	tss.h	/^		eip, eflags, eax, ecx, edx, ebx, esp, ebx, esi, edi,$/;"	m	struct:__anon4
+eip	tss.h	/^		eip, eflags, eax, ecx, edx, ebx, esp, ebx, esi, edi,$/;"	m	struct:__anon4
+enable_a20_line	stage2.s	/^enable_a20_line:$/;"	l
+endloop	stage2.s	/^endloop:$/;"	l
+entry	mbr.s	/^entry:$/;"	l
+es	tss.h	/^		es, cs, ss, ds, fs, gs,$/;"	m	struct:__anon4
+esi	tss.h	/^		eip, eflags, eax, ecx, edx, ebx, esp, ebx, esi, edi,$/;"	m	struct:__anon4
+esp	tss.h	/^		eip, eflags, eax, ecx, edx, ebx, esp, ebx, esi, edi,$/;"	m	struct:__anon4
+esp0	tss.h	/^		backlink, esp0, ss0, esp1, ss1, esp2, ss2, cr3,$/;"	m	struct:__anon4
+esp1	tss.h	/^		backlink, esp0, ss0, esp1, ss1, esp2, ss2, cr3,$/;"	m	struct:__anon4
+esp2	tss.h	/^		backlink, esp0, ss0, esp1, ss1, esp2, ss2, cr3,$/;"	m	struct:__anon4
+execute_file	shell.c	/^int execute_file(void)$/;"	f
+ext	fat12.h	/^	unsigned char  ext[3];$/;"	m	struct:FAT12_FILE
+f_after486	test_processor.h	/^	int f_after486;$/;"	m	struct:cpu_type
+f_keystatus	keycode.h	/^	unsigned int f_keystatus;$/;"	m	struct:__anon1
+fdc0_init	fdd2.c	/^int fdc0_init(void)$/;"	f
+fdd_command	fdd.c	/^int fdd_command(int command)$/;"	f
+fdd_command	fdd2.c	/^int fdd_command(unsigned char command)$/;"	f
+file	fat12.c	/^struct FAT12_FILE file[ROOTDIR_MAX_FILE];$/;"	v	typeref:struct:FAT12_FILE
+filecount	fat12.c	/^int filecount;$/;"	v
+flags	idt.h	/^	unsigned char  flags;$/;"	m	struct:__anon2
+font_bitmap_data	font_data.c	/^unsigned short font_bitmap_data[] = {$/;"	v
+free	memory.c	/^void free(void *p)$/;"	f
+fs	tss.h	/^		es, cs, ss, ds, fs, gs,$/;"	m	struct:__anon4
+gdt	stage2.s	/^gdt:$/;"	l
+gdtdesc	stage2.s	/^gdtdesc:$/;"	l
+get_keycode	interrupt_handler/keycode_encoder.c	/^unsigned char get_keycode(void)$/;"	f
+get_keycode_ascii	interrupt_handler/keycode_encoder.c	/^char get_keycode_ascii(void)$/;"	f
+get_rootdir_file	fat12.c	/^void get_rootdir_file(void)$/;"	f
+gs	tss.h	/^		es, cs, ss, ds, fs, gs,$/;"	m	struct:__anon4
+hlt	asm_func.s	/^hlt:$/;"	l
+i_read	keycode.h	/^	int i_read;$/;"	m	struct:__anon1
+i_write	keycode.h	/^	int i_write;$/;"	m	struct:__anon1
+idt	idt.c	/^GATE_DESCRIPTOR idt[100];$/;"	v
+idtr	idt.c	/^IDTR idtr;$/;"	v
+in_byte	asm_func.s	/^in_byte: # int in_byte(int port);$/;"	l
+init_idt	idt.c	/^int init_idt(void)$/;"	f
+init_memory	memory.c	/^int init_memory(void)$/;"	f
+init_pic	pic.c	/^int init_pic(void)$/;"	f
+init_pit	interrupt_device/timer.c	/^void init_pit(void)$/;"	f
+init_screen	put_font.c	/^int init_screen(void)$/;"	f
+init_screen_11B	put_font_11B.c	/^int init_screen_11B(void)$/;"	f
+init_screen_default	put_font_default.c	/^int init_screen_default(void)$/;"	f
+interrupt_handler20	interrupt_handler/handler20.s	/^interrupt_handler20:$/;"	l
+interrupt_handler21	interrupt_handler/handler21.s	/^interrupt_handler21:$/;"	l
+interrupt_handler26	interrupt_handler/handler26.s	/^interrupt_handler26:$/;"	l
+iomap	tss.h	/^		ldtr, iomap;$/;"	m	struct:__anon4
+is_initialize	put_font_default.c	/^static char is_initialize = 0;$/;"	v	file:
+itoa	print.c	/^int itoa(char *str, unsigned int value)$/;"	f
+jmp	mbr.s	/^jmp		entry$/;"	l
+key_encoder	interrupt_handler/keycode_encoder.c	/^void key_encoder(unsigned int code)$/;"	f
+keycode	main.c	/^KEYCODE keycode;$/;"	v
+keytable	interrupt_handler/keycode_encoder.c	/^static char *keytable, *keytable_shift;$/;"	v	file:
+keytable1_en	interrupt_handler/keycode_encoder.c	/^static char keytable1_en[] = {$/;"	v	file:
+keytable1_en_shift	interrupt_handler/keycode_encoder.c	/^static char keytable1_en_shift[] = {$/;"	v	file:
+keytable1_ja	interrupt_handler/keycode_encoder.c	/^static char keytable1_ja[] = {$/;"	v	file:
+keytable1_ja_shift	interrupt_handler/keycode_encoder.c	/^static char keytable1_ja_shift[] = {$/;"	v	file:
+keytable2_en	interrupt_handler/keycode_encoder.c	/^static char keytable2_en[] = {$/;"	v	file:
+keytable2_en_shift	interrupt_handler/keycode_encoder.c	/^static char keytable2_en_shift[] = {$/;"	v	file:
+keytable2_ja	interrupt_handler/keycode_encoder.c	/^static char keytable2_ja[] = {$/;"	v	file:
+keytable2_ja_shift	interrupt_handler/keycode_encoder.c	/^static char keytable2_ja_shift[] = {$/;"	v	file:
+keytable_shift	interrupt_handler/keycode_encoder.c	/^static char *keytable, *keytable_shift;$/;"	v	file:
+last_date	fat12.h	/^	unsigned short last_date;$/;"	m	struct:FAT12_FILE
+ldtr	tss.h	/^		ldtr, iomap;$/;"	m	struct:__anon4
+len	keycode.h	/^	int len;$/;"	m	struct:__anon1
+load_eflags	asm_func.s	/^load_eflags:$/;"	l
+load_idt	idt.c	4;"	d	file:
+main	exe/exe.c	/^void main(void)$/;"	f
+main	main.c	/^int main(void)$/;"	f
+make_date	fat12.h	/^	unsigned short make_date;$/;"	m	struct:FAT12_FILE
+make_time	fat12.h	/^	unsigned short make_time;$/;"	m	struct:FAT12_FILE
+malloc	memory.c	/^void *malloc(unsigned int size)$/;"	f
+mbr_start	mbr.s	/^mbr_start:$/;"	l
+memcpy	print.c	/^void *memcpy(void *buf1, const void *buf2, unsigned int size)$/;"	f
+memory_ctrl	memory.c	/^static char memory_ctrl[125000];$/;"	v	file:
+memory_test	memory_test.c	/^unsigned int memory_test(struct cpu_type cpu, unsigned int start, unsigned int end)$/;"	f
+memory_total	main.c	/^unsigned int memory_total;$/;"	v
+memset	print.c	/^void *memset(void *buf, int ch, unsigned int size)$/;"	f
+message_boot_error	mbr.s	/^message_boot_error:$/;"	l
+message_boot_success	mbr.s	/^message_boot_success:$/;"	l
+msg	stage2.s	/^msg:$/;"	l
+name	fat12.h	/^	unsigned char  name[8];$/;"	m	struct:FAT12_FILE
+next_	stage2.s	/^next_:$/;"	l
+out_byte	asm_func.s	/^out_byte: # void out_byte(int port, int data);$/;"	l
+out_word	asm_func.s	/^out_word: # void out_word(int port, int data);$/;"	l
+pos_x	put_font_default.c	/^static int pos_x, pos_y;$/;"	v	file:
+pos_y	put_font_default.c	/^static int pos_x, pos_y;$/;"	v	file:
+print_fin	mbr.s	/^print_fin:$/;"	l
+print_fin	stage2.s	/^print_fin:$/;"	l
+print_font_11B	put_font_11B.c	/^int print_font_11B(int init_x, int init_y, unsigned char ch)$/;"	f
+print_message	mbr.s	/^print_message:$/;"	l
+print_msg	stage2.s	/^print_msg:$/;"	l
+print_read_success_message	mbr.s	/^print_read_success_message:$/;"	l
+print_rootdir_file	shell.c	/^int print_rootdir_file(void)$/;"	f
+protected_idt	stage2.s	/^protected_idt:$/;"	l
+protected_segment	stage2.s	/^protected_segment:$/;"	l
+put_char_default	put_font_default.c	/^int put_char_default(char c, int color, int bgcolor, int x, int y)$/;"	f
+put_pixel	put_font_11B.c	/^int put_pixel(int x, int y,$/;"	f
+puts	put_font.c	/^int puts(char *str)$/;"	f
+puts_11B	put_font_11B.c	/^int puts_11B(char *str)$/;"	f
+puts_default	put_font_default.c	/^int puts_default(char *str)$/;"	f
+puts_position_default	put_font_default.c	/^int puts_position_default(char *str, int x, int y)$/;"	f
+read_data_fdd	fdd2.c	/^int read_data_fdd(int drive, int head, int track, int sector)$/;"	f
+read_data_from_fdd	fdd.c	/^int read_data_from_fdd(int drive, int head, int track, int sector)$/;"	f
+read_error	mbr.s	/^read_error:$/;"	l
+read_fdc0_main_status_register	fdd2.c	/^read_fdc0_main_status_register(void)$/;"	f
+read_loop	mbr.s	/^read_loop:$/;"	l
+read_next	mbr.s	/^read_next:$/;"	l
+read_retry	mbr.s	/^read_retry:$/;"	l
+real_to_protected	stage2.s	/^real_to_protected:$/;"	l
+registers_init	mbr.s	/^registers_init:$/;"	l
+reserve	fat12.h	/^	         char  reserve;$/;"	m	struct:FAT12_FILE
+reserved	idt.h	/^	unsigned char  reserved;$/;"	m	struct:__anon2
+screen_mode	put_font.c	/^static int screen_mode = 1;$/;"	v	file:
+sector_read_from_disk_to_memory	mbr.s	/^sector_read_from_disk_to_memory:$/;"	l
+selector	idt.h	/^	unsigned short selector;$/;"	m	struct:__anon2
+set_keytable	interrupt_handler/keycode_encoder.c	/^void set_keytable(char keytype)$/;"	f
+set_pit_counter	interrupt_device/timer.c	/^int set_pit_counter(int freq, unsigned char counter, unsigned char mode)$/;"	f
+setupGateDescriptor	idt.c	/^void setupGateDescriptor(int num, int base,$/;"	f
+setupInterruptGate	idt.c	/^void setupInterruptGate(int num, void *interrupt_handler)$/;"	f
+size	fat12.h	/^	unsigned int   size;$/;"	m	struct:FAT12_FILE
+size	idt.h	/^	unsigned short  size;$/;"	m	struct:__anon3
+src	exe/Makefile	/^src=exe.c$/;"	m
+ss	tss.h	/^		es, cs, ss, ds, fs, gs,$/;"	m	struct:__anon4
+ss0	tss.h	/^		backlink, esp0, ss0, esp1, ss1, esp2, ss2, cr3,$/;"	m	struct:__anon4
+ss1	tss.h	/^		backlink, esp0, ss0, esp1, ss1, esp2, ss2, cr3,$/;"	m	struct:__anon4
+ss2	tss.h	/^		backlink, esp0, ss0, esp1, ss1, esp2, ss2, cr3,$/;"	m	struct:__anon4
+stage3	stage2.s	/^stage3:$/;"	l
+sti	asm_func.s	/^sti:$/;"	l
+store_eflags	asm_func.s	/^store_eflags:$/;"	l
+strcat	print.c	/^char *strcat(char *dist, const char *src)$/;"	f
+strcmp	print.c	/^int strcmp(const char *str1, const char *str2)$/;"	f
+strlen	print.c	/^int strlen(const char *s)$/;"	f
+test_processor	test_processor.c	/^int test_processor(void)$/;"	f
+time	fat12.h	/^	unsigned char  time;$/;"	m	struct:FAT12_FILE
+type	fat12.h	/^	unsigned char  type;$/;"	m	struct:FAT12_FILE
+view_file_text	shell.c	/^int view_file_text(void)$/;"	f
+vram	put_font_11B.c	/^char *vram = (char *)0xFD000000;$/;"	v
+write_date	fat12.h	/^	unsigned short write_date;$/;"	m	struct:FAT12_FILE
+write_time	fat12.h	/^	unsigned short write_time;$/;"	m	struct:FAT12_FILE

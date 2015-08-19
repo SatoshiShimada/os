@@ -257,7 +257,7 @@ make_time	fat12.h	/^	unsigned short make_time;$/;"	m	struct:FAT12_FILE
 malloc	memory.c	/^void *malloc(unsigned int size)$/;"	f
 mbr_start	mbr.s	/^mbr_start:$/;"	l
 memcpy	print.c	/^void *memcpy(void *buf1, const void *buf2, unsigned int size)$/;"	f
-memory_ctrl	memory.c	/^static char memory_ctrl[125000];$/;"	v	file:
+memory_ctrl	memory.c	/^static unsigned char memory_ctrl[128000];$/;"	v	file:
 memory_test	memory_test.c	/^unsigned int memory_test(struct cpu_type cpu, unsigned int start, unsigned int end)$/;"	f
 memory_total	main.c	/^unsigned int memory_total;$/;"	v
 memset	print.c	/^void *memset(void *buf, int ch, unsigned int size)$/;"	f
@@ -266,6 +266,7 @@ message_boot_success	mbr.s	/^message_boot_success:$/;"	l
 msg	stage2.s	/^msg:$/;"	l
 name	fat12.h	/^	unsigned char  name[8];$/;"	m	struct:FAT12_FILE
 next_	stage2.s	/^next_:$/;"	l
+no_support_function	asm_func.s	/^no_support_function:$/;"	l
 out_byte	asm_func.s	/^out_byte: # void out_byte(int port, int data);$/;"	l
 out_word	asm_func.s	/^out_word: # void out_word(int port, int data);$/;"	l
 pos_x	put_font_default.c	/^static int pos_x, pos_y;$/;"	v	file:

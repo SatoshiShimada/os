@@ -72,6 +72,10 @@ cpuid_vendor_id:
 
 cpuid_processor_brand_string:
 	movl	4(%esp), %edi
+	movl	$0x80000000, %eax
+	cpuid
+	cmpl	$0x80000004, %eax
+	jl		no_support_function
 	movl	$0x80000002, %eax
 	cpuid
 	movl	%eax, 0(%edi)
@@ -90,4 +94,7 @@ cpuid_processor_brand_string:
 	movl	%ebx, 36(%edi)
 	movl	%ecx, 40(%edi)
 	movl	%edx, 44(%edi)
+	ret
+no_support_function:
+	movl	$0x00, 0(%edi)
 	ret

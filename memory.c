@@ -1,5 +1,8 @@
+/*
+ * 0x1000 == 4KiB
+ */
 
-static char memory_ctrl[125000];
+static unsigned char memory_ctrl[128000];
 
 int init_memory(void)
 {
@@ -31,9 +34,25 @@ int init_memory(void)
 
 void *malloc(unsigned int size)
 {
-	int i;
+	int i, c;
+	int index;
+	unsigned long ret, addr;
 
-	return (void*)0x00;
+	i = size / 0x1000;
+	if(size % 0x1000) i++;
+
+	for(c = 0, addr = 0, ret = 0; (addr / 0x1000) < sizeof(memory_ctrl); addr += 0x1000) {
+		index = addr / 0x8000;
+		if(memory_ctrl[index] & (1 << (addr % 0x8000))) {
+			if(c = 0) ret = addr;
+			c++;
+		} else {
+			c = 0;
+		}
+		if(c == i) break;
+	}
+
+	return (void*)ret;
 }
 
 void free(void *p)

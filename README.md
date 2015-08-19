@@ -75,13 +75,13 @@ Fainaly, variable initialize, then allow interrupt & screen initialize & command
 
 ## 実装済みの機能
 
-* Protected Modeへの移行
+* Real Mode(16-bit)からProtected Mode(32-bit)への移行
 
 * 割り込みの処理
 
 * キーボードからのキーコード取得
 
-* FAT12ファイルシステムからのファイル名取得
+* FAT12ファイルシステムからのファイル名取得(disable)
 
 * 搭載メモリ量の確認
 
@@ -97,6 +97,3 @@ Fainaly, variable initialize, then allow interrupt & screen initialize & command
 
 * The text editor(like vi)
 
-## 既知のバグ
-
-* exeコマンドの途中でエミュレータが異常終了する (アドレス指定のミス？)

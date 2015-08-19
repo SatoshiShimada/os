@@ -34,16 +34,18 @@ int main(void)
 	*counter = 0;
 	set_keytable(KEY_EN1);
 	keycode.len = 0;
-	keycode.i_write = keycode.i_read = 0; /* index of write, read */
+	keycode.i_write = keycode.i_read = 0; /* index of write/read */
 
 	sti(); /* enable interrupt */
 	/* cpu after 486 check. if after 486 disable cache */
+	/* get cpu information */
 	test_processor();
 	exe_cpuid();
 	memory_total = memory_test(cpu, 0x00400000, 0xffffffff);
 
 	init_screen();
 
+	init_memory();
 	/* Welcome message & print information */
 	puts("Welcome to My OperatingSystem\n");
 

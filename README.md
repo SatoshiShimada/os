@@ -50,6 +50,8 @@ Example)
 
 ### メモ
 
+mbr.s -> stage.s -> main.c
+
 ファイルシステム: FAT12
 
 カーネルとシェルを分けて考える？

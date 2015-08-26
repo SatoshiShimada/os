@@ -10,7 +10,7 @@
 //#include "shell.h"
 #include "memory.h"
 #include "fat12.h"
-#include "fdd2.h"
+#include "fdd.h"
 
 KEYCODE keycode;
 unsigned int memory_total;

@@ -12,6 +12,8 @@
 #include "fat12.h"
 #include "fdd.h"
 
+#define MEMORY_MANAGER_ADDRESS		0x003c0000
+
 KEYCODE keycode;
 unsigned int memory_total;
 
@@ -22,6 +24,7 @@ unsigned int memory_total;
 int main(void)
 {
 	extern struct cpu_type cpu;
+	struct s_memory_manager *memman;
 	unsigned int *counter = (unsigned int *)0x1000000;
 	int i;
 	char buf[100];
@@ -31,6 +34,7 @@ int main(void)
 	init_pic();
 	init_pit();
 	/* init variavle */
+	memman = (struct s_memory_manager *)MEMORY_MANAGER_ADDRESS;
 	*counter = 0;
 	set_keytable(KEY_EN1);
 	keycode.len = 0;
@@ -43,9 +47,14 @@ int main(void)
 	exe_cpuid();
 	memory_total = memory_test(cpu, 0x00400000, 0xffffffff);
 
+	/* memory initilize */
+	memory_manager_init(memman);
+	memory_manager_free(memman, 0x00001000, 0x0009e000);
+	memory_manager_free(memman, 0x00400000, memory_total - 0x00400000);
+
+	/* screen initilize */
 	init_screen();
 
-	init_memory();
 	/* Welcome message & print information */
 	puts("Welcome to My OperatingSystem\n");
 
@@ -59,6 +68,14 @@ int main(void)
 	puts(buf);
 	puts("\n");
 	puts(cpu.processor_brand_string);
+	puts("\n");
+	puts("memory free: ");
+	itoa(buf, memory_manager_total(memman) / 1024);
+	puts(buf);
+	puts("KB (");
+	itoa(buf, memory_manager_total(memman) / (1024 * 1024));
+	puts(buf);
+	puts("MB)\n");
 
 	for(;;) {
 		hlt();

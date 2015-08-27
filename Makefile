@@ -18,7 +18,6 @@ put_font_11B.c put_font_default.c \
 font_data.c \
 ./interrupt_handler/keycode_encoder.c \
 ./interrupt_device/timer.c
-# shell.c
 
 OBJFILE= \
 stage2.o main.o put_font.o asm_func.o test_processor.o \
@@ -27,7 +26,6 @@ memory.o fat12.o fdd.o \
 put_font_11B.o put_font_default.o \
 font_data.o \
 handler20.o handler21.o handler26.o
-# shell.o
 
 
 # make rule

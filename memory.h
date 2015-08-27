@@ -31,3 +31,8 @@ unsigned int
 memory_manager_alloc(struct s_memory_manager *, unsigned int);
 int
 memory_manager_free(struct s_memory_manager *, unsigned int, unsigned int);
+
+unsigned int
+memory_alloc_4k(struct s_memory_manager *, unsigned int);
+int
+memory_free_4k(struct s_memory_manager *, unsigned int, unsigned int);

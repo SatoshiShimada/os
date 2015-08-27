@@ -7,7 +7,6 @@
 #include "pic.h"
 #include "keycode.h"
 #include "./interrupt_device/interrupt.h"
-//#include "shell.h"
 #include "memory.h"
 #include "fat12.h"
 #include "fdd.h"
@@ -77,6 +76,7 @@ int main(void)
 	puts(buf);
 	puts("MB)\n");
 
+	cmd_buf[0] = '\0';
 	for(;;) {
 		hlt();
 		itoa(buf, *counter / 100);
@@ -85,7 +85,6 @@ int main(void)
 		buf[1] = '\0';
 		if(buf[0] == '\n') {
 			puts("\n");
-			//do_command(cmd_buf);
 			puts("$ ");
 			cmd_buf[0] = '\0'; /* clear buf */
 		} else if(buf[0] == '\t') {

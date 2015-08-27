@@ -110,3 +110,22 @@ memory_manager_free(
 	man->lostsize += size;
 	return -1;
 }
+
+unsigned int
+memory_alloc_4k(struct s_memory_manager *man, unsigned int size)
+{
+	unsigned int a;
+
+	size = (size + 0xfff) & 0xfffff000;
+	a = memory_manager_alloc(man, size);
+	return a;
+}
+
+int
+memory_free_4k(struct s_memory_manager *man, unsigned int addr, unsigned int size)
+{
+	int i;
+	size = (size + 0xfff) & 0xfffff000;
+	i = memory_manager_free(man, addr, size);
+	return i;
+}

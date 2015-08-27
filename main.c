@@ -11,9 +11,9 @@
 #include "fat12.h"
 #include "fdd.h"
 
-#define MEMORY_MANAGER_ADDRESS		0x003c0000
+#define MEMORY_MANAGER_ADDRESS		0x003f0000
 
-KEYCODE keycode;
+KEYCODE keycode; // interrupt_handler/keycode_encoder.c
 unsigned int memory_total;
 
 /*
@@ -55,12 +55,23 @@ int main(void)
 	init_screen();
 
 	/* Welcome message & print information */
-	puts("Welcome to My OperatingSystem\n");
+	puts("=================================\n");
+	puts("= Welcome to My OperatingSystem =\n");
+	puts("=================================\n");
+	puts("\n\n");
 
-	itoa(buf, memory_total / (1024 * 1024));
-	puts("Memory: ");
+	puts("****** DEBUG INFORMATION **********************\n");
+	puts("buf address: ");
+	itoa(buf, (int)buf);
 	puts(buf);
-	puts(" MB\n");
+	puts("\n");
+	puts("f_keystatus address: ");
+	itoa(buf, (int)&(keycode.f_keystatus));
+	puts(buf);
+	puts("\n");
+	puts("***********************************************\n");
+	puts("\n");
+	puts("*************** CPU INFORMATION ***************\n");
 	puts("CPU: ");
 	memcpy(buf, cpu.vendor_id, 16);
 	buf[16] = '\0';
@@ -68,13 +79,20 @@ int main(void)
 	puts("\n");
 	puts(cpu.processor_brand_string);
 	puts("\n");
-	puts("memory free: ");
-	itoa(buf, memory_manager_total(memman) / 1024);
+	puts("***********************************************\n");
+	puts("\n");
+	puts("************** MEMORY INFORMATION *************\n");
+	puts("total memory size: ");
+	itoa(buf, memory_total / (1024 * 1024));
 	puts(buf);
-	puts("KB (");
-	itoa(buf, memory_manager_total(memman) / (1024 * 1024));
+	puts("MB\nfree memory size : ");
+	/*
+	itoa(buf, (unsigned int)(memory_manager_total(memman) / (1024 * 1024)));
 	puts(buf);
-	puts("MB)\n");
+	*/
+	puts("MB\n");
+	puts("***********************************************\n");
+	puts("\n\n$ ");
 
 	cmd_buf[0] = '\0';
 	for(;;) {

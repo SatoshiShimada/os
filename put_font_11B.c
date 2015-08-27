@@ -1,5 +1,6 @@
 
 #include "put_font_11B.h"
+#include "print.h"
 
 #define SCRN_X		1280
 #define SCRN_Y		1024
@@ -11,6 +12,7 @@ char *vram = (char *)0xFD000000;
 int puts_11B(char *str)
 {
 	int i;
+	int c;
 	static int x = 0;
 	static int y = 0;
 
@@ -26,6 +28,13 @@ int puts_11B(char *str)
 				x = 0;
 				y += 16;
 			}
+		}
+		if(y >= SCRN_Y - 16) {
+			// scroll
+			for(c = 0; c < (SCRN_Y / 16 - 1); c++) {
+				memcpy(vram + (3 * SCRN_X * 16 * c), vram + (3 * SCRN_X * 16 * (c + 1)), 3 * 16 * SCRN_X);
+			}
+			y -= 16;
 		}
 	}
 

@@ -86,10 +86,10 @@ int main(void)
 	itoa(buf, memory_total / (1024 * 1024));
 	puts(buf);
 	puts("MB\nfree memory size : ");
-	/*
+//	/*
 	itoa(buf, (unsigned int)(memory_manager_total(memman) / (1024 * 1024)));
 	puts(buf);
-	*/
+//	*/
 	puts("MB\n");
 	puts("***********************************************\n");
 	puts("\n\n$ ");

@@ -1,16 +1,26 @@
 #include "asm_func.h"
 #include "screen.h"
-//#include "put_font.h"
+#include "put_font.h"
 
 void init_palette(void);
 void init_screen(void);
 void boxfill8(unsigned char *, int, unsigned char, int, int, int, int);
+void init_mouse_cursor8(char *, char);
+void putblock8_8(char *, int, int, int, int, int, char *, int);
 
 int main(void) {
+	char *vram = (char *)0xa0000;
+	int scrnx = 320;
+	int mx, my;
+	char mcursor[256];
+
 	init_palette();
 	init_screen();
 
-	//puts_11B("hello");
+	init_mouse_cursor8(mcursor, COL8_008484);
+	mx = 152; my = 72;
+	putblock8_8(vram, scrnx, 16, 16, mx, my, mcursor, 16);
+	puts("Welcome to OS");
 	for(;;) ;
 	return 0;
 }
@@ -42,3 +52,51 @@ void init_screen(void)
 
 	return;
 }
+
+void init_mouse_cursor8(char *mouse, char bc)
+{
+	static char cursor[16][16] = {
+		"**************..",
+		"*OOOOOOOOOOO*...",
+		"*OOOOOOOOOO*....",
+		"*OOOOOOOOO*.....",
+		"*OOOOOOOO*......",
+		"*OOOOOOO*.......",
+		"*OOOOOOO*.......",
+		"*OOOOOOOO*......",
+		"*OOOO**OOO*.....",
+		"*OOO*..*OOO*....",
+		"*OO*....*OOO*...",
+		"*O*......*OOO*..",
+		"**........*OOO*.",
+		"*..........*OOO*",
+		"............*OO*",
+		".............***"
+	};
+	int x, y;
+
+	for(y = 0; y < 16; y++) {
+		for(x = 0; x < 16; x++) {
+			if(cursor[y][x] == '*') {
+				mouse[y * 16 + x] = COL8_000000;
+			} else if(cursor[y][x] == 'O') {
+				mouse[y * 16 + x] = COL8_FFFFFF;
+			} else if(cursor[y][x] == '.') {
+				mouse[y * 16 + x] = bc; // set backgroundcolor
+			}
+		}
+	}
+	return;
+}
+
+void putblock8_8(char *vram, int vxsize, int pxsize, int pysize, int px0, int py0, char *buf, int bxsize)
+{
+	int x, y;
+	for(y = 0; y < pysize; y++) {
+		for(x = 0; x < pxsize; x++) {
+			vram[(py0 + y) * vxsize + (px0 + x)] = buf[y * bxsize + x];
+		}
+	}
+	return;
+}
+

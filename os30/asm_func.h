@@ -18,6 +18,6 @@ void cli(void);
 
 void hlt(void);
 
-void cpuid_vendor_id(unsigned char *);
-void cpuid_processor_brand_string(unsigned char *);
+void load_gdtr(int, int);
+void load_idtr(int, int);
 #endif /* _ASM_FUNC_H_ */

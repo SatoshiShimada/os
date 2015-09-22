@@ -2,10 +2,10 @@
 .text
 .globl load_eflags, store_eflags, cache_disable, cache_enable
 .globl in_byte, out_byte
+.globl out_word
 .globl sti, cli
 .globl hlt
-.globl out_word
-.globl cpuid_vendor_id, cpuid_processor_brand_string
+.globl load_gdtr, load_idtr
 
 load_eflags:
 	pushf
@@ -60,40 +60,15 @@ hlt:
 	hlt
 	ret
 
-cpuid_vendor_id:
-	mov		$0, %eax
-	cpuid
-	movl	4(%esp), %edi
-	movl	%ebx, (%edi)
-	movl	%edx, 4(%edi)
-	movl	%ecx, 8(%edi)
+load_gdtr: # void load_gdtr(int limit, int addr);
+	mov		4(%esp), %ax
+	mov		%ax, 6(%esp)
+	lgdt	6(%esp)
 	ret
 
-cpuid_processor_brand_string:
-	movl	4(%esp), %edi
-	movl	$0x80000000, %eax
-	cpuid
-	cmpl	$0x80000004, %eax
-	jl		no_support_function
-	movl	$0x80000002, %eax
-	cpuid
-	movl	%eax, 0(%edi)
-	movl	%ebx, 4(%edi)
-	movl	%ecx, 8(%edi)
-	movl	%edx, 12(%edi)
-	movl	$0x80000003, %eax
-	cpuid
-	movl	%eax, 16(%edi)
-	movl	%ebx, 20(%edi)
-	movl	%ecx, 24(%edi)
-	movl	%edx, 28(%edi)
-	movl	$0x80000004, %eax
-	cpuid
-	movl	%eax, 32(%edi)
-	movl	%ebx, 36(%edi)
-	movl	%ecx, 40(%edi)
-	movl	%edx, 44(%edi)
+load_idtr:
+	mov		4(%esp), %ax
+	mov		%ax, 6(%esp)
+	lidt	6(%esp)
 	ret
-no_support_function:
-	movl	$0x00, 0(%edi)
-	ret
+

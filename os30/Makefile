@@ -11,8 +11,10 @@ QEMU=qemu-system-x86_64
 QEMUOPT=-m 128 -vga std -k en-us -name "MY OS" -snapshot -cpu core2duo
 
 SRC =main.c print.c color_palette.c put_font.c font_data.c
+SRC+=dsc_tbl.c pic.c
 OBJ =stage2.o asm_func.o
 OBJ+=main.o print.o color_palette.o put_font.o font_data.o
+OBJ+=dsc_tbl.o pic.o
 
 $(IMG): mbr.bin stage2.bin
 	dd if=/dev/zero of=$(IMG) bs=512 count=2880 status=none

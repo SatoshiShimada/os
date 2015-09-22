@@ -1,6 +1,12 @@
-#include "put_font.h"
+#include "keycode.h"
 
-void inthandler21(int *esp)
+void inthandler21(int keycode)
 {
-	puts("\nkeyboard interrupt!");
+	key_encoder((unsigned int)keycode);
+	return;
+}
+
+void inthandler2c(void)
+{
+	return;
 }

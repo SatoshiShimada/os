@@ -3,6 +3,7 @@
 #include "put_font.h"
 #include "pic.h"
 #include "dsc_tbl.h"
+#include "keycode.h"
 
 void init_palette(void);
 void init_screen(void);
@@ -10,7 +11,7 @@ void boxfill8(unsigned char *, int, unsigned char, int, int, int, int);
 void init_mouse_cursor8(char *, char);
 void putblock8_8(char *, int, int, int, int, int, char *, int);
 
-int flag;
+KEYCODE keycode;
 
 int main(void) {
 	char *vram = (char *)0xa0000;
@@ -24,6 +25,7 @@ int main(void) {
 	sti();
 	init_palette();
 	init_screen();
+	set_keytable(KEY_EN1);
 
 	init_mouse_cursor8(mcursor, COL8_008484);
 	mx = 152; my = 72;

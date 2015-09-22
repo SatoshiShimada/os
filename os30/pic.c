@@ -78,7 +78,8 @@ int init_pic(void)
 	 */
 	/* enable Timer & keyboard */
 	out_byte(PORT_PIC_MASTER_IMR,
-		PIC_IMR_MASK_IRQ0 & PIC_IMR_MASK_IRQ1);
+		//PIC_IMR_MASK_IRQ0 & PIC_IMR_MASK_IRQ1);
+		PIC_IMR_MASK_IRQ1);
 	/* enable all */
 	out_byte(PORT_PIC_SLAVE_IMR,
 		PIC_IMR_MASK_IRQ_ALL);

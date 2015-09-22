@@ -2,13 +2,15 @@
 #include "screen.h"
 #include "put_font.h"
 #include "pic.h"
+#include "dsc_tbl.h"
 
 void init_palette(void);
 void init_screen(void);
 void boxfill8(unsigned char *, int, unsigned char, int, int, int, int);
 void init_mouse_cursor8(char *, char);
 void putblock8_8(char *, int, int, int, int, int, char *, int);
-void init_gdtidt(void); // dsc_tbl.c
+
+int flag;
 
 int main(void) {
 	char *vram = (char *)0xa0000;
@@ -16,8 +18,10 @@ int main(void) {
 	int mx, my;
 	char mcursor[256];
 
+	cli();
 	init_gdtidt();
 	init_pic();
+	sti();
 	init_palette();
 	init_screen();
 
@@ -25,7 +29,9 @@ int main(void) {
 	mx = 152; my = 72;
 	putblock8_8(vram, scrnx, 16, 16, mx, my, mcursor, 16);
 	puts("Welcome to OS");
-	for(;;) ;
+	for(;;) {
+		hlt();
+	}
 	return 0;
 }
 

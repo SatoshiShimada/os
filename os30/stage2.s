@@ -21,11 +21,13 @@ real_to_protected:
 	or		$0x01, %eax
 	mov		%eax, %cr0
 
-	DATA32	ljmp	$8*1, $protected_segment
+	# (8*2) is code segment
+	DATA32	ljmp	$8*2, $protected_segment
 
 .code32
 protected_segment:
-	mov		$8*2, %ax
+	# (8*1) is data segment
+	mov		$8*1, %ax
 	mov		%ax, %ds
 	mov		%ax, %es
 	mov		%ax, %fs
@@ -48,12 +50,12 @@ gdtdesc:
 gdt:
 	.word	0, 0
 	.byte	0, 0, 0, 0
-	# code segment
-	.word	0xffff, 0x0000
-	.byte	0x00, 0x9a, 0xcf, 0x00
 	# data segment
 	.word	0xffff, 0x0000
 	.byte	0x00, 0x92, 0xcf, 0x00
+	# code segment
+	.word	0xffff, 0x0000
+	.byte	0x00, 0x9a, 0xcf, 0x00
 
 .align 8
 protected_idt:

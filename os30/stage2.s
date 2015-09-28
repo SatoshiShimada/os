@@ -105,6 +105,9 @@ a20_wait2:
 
 .code32
 stage3:
+	mov		$0x79ff, %eax
+	mov		%eax, %esp
+	mov		%eax, %ebp
 	# call to C program code
 	call	main
 endloop:

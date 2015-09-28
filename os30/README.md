@@ -18,6 +18,7 @@ make run
 
 |Address|Data|
 |:------|---------:|
+|~ 0x79ff | Stack |
 |0x8000 |FDD image of sector 0|
 |0x8200 |FDD image of sector 1|
 |0x8400 |FDD image of sector 2|

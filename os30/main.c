@@ -18,6 +18,8 @@ int main(void) {
 	int scrnx = 320;
 	int mx, my;
 	char mcursor[256];
+	char c;
+	char buf[100];
 
 	cli();
 	init_gdtidt();
@@ -31,6 +33,13 @@ int main(void) {
 	mx = 152; my = 72;
 	putblock8_8(vram, scrnx, 16, 16, mx, my, mcursor, 16);
 	puts("Welcome to OS");
+	buf[1] = '\0';
+	for(;;) {
+		c = get_keycode_ascii();
+		buf[0] = c;
+		puts(buf);
+		hlt();
+	}
 	for(;;) {
 		hlt();
 	}

@@ -17,7 +17,9 @@ asm_inthandler21:
 
 	xor		%eax, %eax
 	inb		$0x60, %al
+	push	%eax
 	call	inthandler21
+	pop		%eax
 
 	mov		$0x20, %al
 	out		%al, $0x20

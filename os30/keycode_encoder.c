@@ -143,3 +143,4 @@ char get_keycode_ascii(void)
 
 	return key;
 }
+

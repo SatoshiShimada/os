@@ -31,4 +31,26 @@ asm_inthandler21:
 	iret
 
 asm_inthandler2c:
+	push	%es
+	push	%ds
+	pusha
+	mov		%esp, %eax
+	push	%eax
+	mov		%ss, %ax
+	mov		%ax, %ds
+	mov		%ax, %es
+
+	xor		%eax, %eax
+	inb		$0x60, %al
+	push	%eax
+	call	inthandler2c
+	pop		%eax
+
+	mov		$0x20, %al
+	out		%al, $0x20
+
+	pop		%eax
+	popa
+	pop		%ds
+	pop		%es
 	iret

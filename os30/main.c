@@ -4,6 +4,7 @@
 #include "pic.h"
 #include "dsc_tbl.h"
 #include "keycode.h"
+#include "mouse.h"
 
 void init_palette(void);
 void init_screen(void);
@@ -28,6 +29,8 @@ int main(void) {
 	init_palette();
 	init_screen();
 	set_keytable(KEY_EN1);
+	init_keyboard(); // for mouse
+	enable_mouse();
 
 	init_mouse_cursor8(mcursor, COL8_008484);
 	mx = 152; my = 72;

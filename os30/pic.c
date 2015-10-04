@@ -76,11 +76,10 @@ int init_pic(void)
 	 * PIC mask setting
 	 * master and slave PIC
 	 */
-	/* enable Timer & keyboard */
+	/* enable Slave PIC and keyboard */
 	out_byte(PORT_PIC_MASTER_IMR,
-		//PIC_IMR_MASK_IRQ0 & PIC_IMR_MASK_IRQ1);
-		PIC_IMR_MASK_IRQ1);
-	/* enable all */
+		PIC_IMR_MASK_IRQ1 & PIC_IMR_MASK_IRQ2);
+	/* enable all at slave mask */
 	out_byte(PORT_PIC_SLAVE_IMR,
 		PIC_IMR_MASK_IRQ_ALL);
 

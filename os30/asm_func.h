@@ -17,6 +17,7 @@ void sti(void);
 void cli(void);
 
 void hlt(void);
+void sti_hlt(void);
 
 void load_gdtr(int, int);
 void load_idtr(int, int);

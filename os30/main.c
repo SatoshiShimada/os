@@ -40,7 +40,7 @@ int main(void) {
 	init_screen();
 	set_keytable(KEY_EN1);
 	init_keyboard(); // for mouse
-	enable_mouse();
+	enable_mouse(&mdec);
 	sti();
 
 	init_mouse_cursor8(mcursor, COL8_008484);
@@ -49,24 +49,32 @@ int main(void) {
 	puts("Welcome to OS");
 	buf[1] = '\0';
 	for(;;) {
+		cli();
 		c = get_keycode_ascii();
-		buf[0] = c;
-		puts(buf);
-		unc = fifo8_get(fifo);
-		if(unc != -1) {
-			i = mouse_decode(&mdec, unc);
-			if(i == 1) { /* mouse data 3 byte complete */
-				boxfill8((unsigned char *)vram, scrnx, COL8_008484, mx, my, mx + 15, my + 15);
-				mx += mdec.x;
-				my += mdec.y;
-				if(mx < 0) mx = 0;
-				if(my < 0) my = 0;
-				if(mx > scrnx - 16) mx = scrnx - 16;
-				if(my > scrny - 16) my = scrny - 16;
-				putblock8_8(vram, scrnx, 16, 16, mx, my, mcursor, 16);
+		i = fifo8_get(fifo);
+		if(c == 0 && i == -1) {
+			sti_hlt();
+		} else {
+			sti();
+			if(c != 0) {
+				buf[0] = c;
+				puts(buf);
+			}
+			if(unc != -1) {
+				unc = (unsigned char)i;
+				i = mouse_decode(&mdec, unc);
+				if(i == 1) { /* mouse data 3 byte complete */
+					boxfill8((unsigned char *)vram, scrnx, COL8_008484, mx, my, mx + 15, my + 15);
+					mx += mdec.x;
+					my += mdec.y;
+					if(mx < 0) mx = 0;
+					if(my < 0) my = 0;
+					if(mx > scrnx - 16) mx = scrnx - 16;
+					if(my > scrny - 16) my = scrny - 16;
+					putblock8_8(vram, scrnx, 16, 16, mx, my, mcursor, 16);
+				}
 			}
 		}
-		hlt();
 	}
 	for(;;) {
 		hlt();

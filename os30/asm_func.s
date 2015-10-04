@@ -4,7 +4,7 @@
 .globl in_byte, out_byte
 .globl out_word
 .globl sti, cli
-.globl hlt
+.globl hlt, sti_hlt
 .globl load_gdtr, load_idtr
 
 load_eflags:
@@ -57,6 +57,11 @@ cli:
 	ret
 
 hlt:
+	hlt
+	ret
+
+sti_hlt:
+	sti
 	hlt
 	ret
 

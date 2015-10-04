@@ -106,6 +106,7 @@ char get_keycode_ascii(void)
 	char key;
 
 	code = get_keycode();
+	if(code == 0) return 0;
 	if(code >= 0x80) { /* leave key */
 		switch(code - 0x80) {
 		case 0x2a: /* left shift */

@@ -33,13 +33,14 @@ void init_keyboard(void)
 	return;
 }
 
-void enable_mouse(void)
+void enable_mouse(struct MOUSE_DEC *mdec)
 {
 	/* mosue enable */
 	wait_KBC_sendready();
 	out_byte(PORT_KEYCMD, KEYCMD_SENDTO_MOUSE);
 	wait_KBC_sendready();
 	out_byte(PORT_KEYDAT, MOUSECMD_ENABLE);
+	mdec->phase = 0;
 	return;
 }
 

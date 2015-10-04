@@ -5,6 +5,7 @@
 #include "dsc_tbl.h"
 #include "keycode.h"
 #include "mouse.h"
+#include "fifo.h"
 
 void init_palette(void);
 void init_screen(void);
@@ -13,24 +14,34 @@ void init_mouse_cursor8(char *, char);
 void putblock8_8(char *, int, int, int, int, int, char *, int);
 
 KEYCODE keycode;
+struct FIFO8 *fifo;
 
 int main(void) {
 	char *vram = (char *)0xa0000;
 	int scrnx = 320;
+	int scrny = 200;
 	int mx, my;
 	char mcursor[256];
 	char c;
 	char buf[100];
+	unsigned char mouse_buf[100];
+	unsigned char unc;
+	struct FIFO8 mouse_fifo;
+	struct MOUSE_DEC mdec;
+	int i;
+
+	fifo = &mouse_fifo;
 
 	cli();
 	init_gdtidt();
 	init_pic();
-	sti();
+	fifo8_init(fifo, sizeof(mouse_buf), mouse_buf);
 	init_palette();
 	init_screen();
 	set_keytable(KEY_EN1);
 	init_keyboard(); // for mouse
 	enable_mouse();
+	sti();
 
 	init_mouse_cursor8(mcursor, COL8_008484);
 	mx = 152; my = 72;
@@ -41,6 +52,20 @@ int main(void) {
 		c = get_keycode_ascii();
 		buf[0] = c;
 		puts(buf);
+		unc = fifo8_get(fifo);
+		if(unc != -1) {
+			i = mouse_decode(&mdec, unc);
+			if(i == 1) { /* mouse data 3 byte complete */
+				boxfill8((unsigned char *)vram, scrnx, COL8_008484, mx, my, mx + 15, my + 15);
+				mx += mdec.x;
+				my += mdec.y;
+				if(mx < 0) mx = 0;
+				if(my < 0) my = 0;
+				if(mx > scrnx - 16) mx = scrnx - 16;
+				if(my > scrny - 16) my = scrny - 16;
+				putblock8_8(vram, scrnx, 16, 16, mx, my, mcursor, 16);
+			}
+		}
 		hlt();
 	}
 	for(;;) {

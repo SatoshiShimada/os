@@ -46,9 +46,6 @@ asm_inthandler2c:
 	call	inthandler2c
 	pop		%eax
 
-	mov		$0x20, %al
-	out		%al, $0x20
-
 	pop		%eax
 	popa
 	pop		%ds
